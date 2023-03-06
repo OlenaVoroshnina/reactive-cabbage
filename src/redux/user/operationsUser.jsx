@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from 'redux/user/operationsUser';
-import { setToken } from 'redux/user/operationsUser';
+import { instance } from '../auth/operationsAuth';
+import { setToken } from '../auth/operationsAuth';
 
 export const getUserBalance = createAsyncThunk(
   'user/balance',
