@@ -7,22 +7,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from 'components/App';
-import './index.css';
+
+import 'modern-normalize';
+import { ThemeProvider } from '@emotion/react';
+import { GlobalStyle, theme } from './styles';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider 
-    // store={store}
-    >
-      <PersistGate 
-      // loading={null} persistor={persistor}
-      >
-        <BrowserRouter 
-        // basename="/reactive-cabbage"
-        >
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+    <App />
   </React.StrictMode>
 );
