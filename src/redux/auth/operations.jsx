@@ -5,7 +5,7 @@ export const instance = axios.create({
   baseURL: 'https://kapusta-backend.goit.global/',
 });
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
@@ -51,7 +51,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
-  async (_, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.user.token;
     if (persistedToken === null) {
@@ -60,7 +60,8 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await instance.get('auth​/refresh');
+      const res = await instance.post('auth​/refresh', credentials);
+      setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
