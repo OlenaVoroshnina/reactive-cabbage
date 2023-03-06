@@ -9,11 +9,26 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
 
 import 'modern-normalize';
-import { ThemeProvider } from '@emotion/react';
+import { Global, ThemeProvider } from '@emotion/react';
 import { GlobalStyle, theme } from './styles';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Provider 
+    // store={store}
+    >
+      <PersistGate 
+      // loading={null} persistor={persistor}
+      >
+        <ThemeProvider theme={theme}>
+          <Global styles={GlobalStyle} />
+            <BrowserRouter 
+            basename="/reactive-cabbage"
+            >
+              <App />
+            </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
