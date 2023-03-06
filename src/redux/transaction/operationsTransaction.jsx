@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from 'redux/user/operationsUser';
-import { setToken } from 'redux/user/operationsUser';
+import { instance, setToken } from 'redux/auth/operationsAuth';
 
 export const addIncome = createAsyncThunk(
   'transactions/addIncome',
