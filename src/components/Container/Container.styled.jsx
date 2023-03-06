@@ -9,11 +9,9 @@ export const ContainerMain = styled.div`
   @media screen and (min-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;
-    
   }
   @media screen and (min-width: 1280px) {
     padding-left: 16px;
     padding-right: 16px;
-    
   }
 `;
