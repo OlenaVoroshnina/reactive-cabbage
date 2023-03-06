@@ -5,11 +5,11 @@ export const instance = axios.create({
   baseURL: 'https://kapusta-backend.goit.global/',
 });
 
-export const setAuthHeader = token => {
+export const setToken = token => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const clearAuthHeader = () => {
+const clearToken = () => {
   instance.defaults.headers.common.Authorization = '';
 };
 
@@ -19,7 +19,7 @@ export const register = createAsyncThunk(
     try {
       const res = await instance.post('/auth/register', credentials);
       //   console.log(res);
-      setAuthHeader(res.data.token);
+      setToken(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -32,7 +32,7 @@ export const login = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await instance.post('/auth/login', credentials);
-      setAuthHeader(res.data.token);
+      setToken(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -43,7 +43,7 @@ export const login = createAsyncThunk(
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await instance.post('/auth/logout');
-    clearAuthHeader();
+    clearToken();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -59,9 +59,9 @@ export const refreshUser = createAsyncThunk(
     }
 
     try {
-      setAuthHeader(persistedToken);
+      setToken(persistedToken);
       const res = await instance.post('auth​/refresh', credentials);
-      setAuthHeader(res.data.token);
+      setToken(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

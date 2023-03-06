@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from 'redux/user/operations';
+import { instance } from 'redux/user/operationsUser';
 
 export const getUserBalance = createAsyncThunk(
   'user/balance',
