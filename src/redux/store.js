@@ -13,7 +13,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import authSlice from 'redux/auth/authSlice';
-import transactionsSlice from 'redux/transaction/transactionsSlice';
+import transactionsSlice from './transaction/transactionSlice';
 import userSlice from 'redux/user/userSlice';
 // import { reportsReducer } from './reports/reports';
 // import { reportsQueryReducer } from './reportsQuery/reportsQuerySlice';
