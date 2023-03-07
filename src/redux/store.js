@@ -12,11 +12,10 @@ import {
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import authSlice from 'redux/auth/authSlice';
-import transactionsSlice from './transaction/transactionSlice';
-import userSlice from 'redux/user/userSlice';
-// import { reportsReducer } from './reports/reports';
-// import { reportsQueryReducer } from './reportsQuery/reportsQuerySlice';
+import authSlice from 'redux/auth/authSlice.jsx';
+import transactionsSlice from 'redux/transactions/transactionSlice.jsx';
+import { reportsReducer } from 'redux/reports/reports';
+import { reportsQueryReducer } from 'redux/reportsQuery/reportsQuerySlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -30,18 +29,12 @@ const transactionsPersistConfig = {
   whitelist: [],
 };
 
-const userPersistConfig = {
-    key: 'user',
-    storage,
-  };
-
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
     transactions: persistReducer(transactionsPersistConfig, transactionsSlice),
-    user: persistReducer(userPersistConfig, userSlice),
-    // reports: reportsReducer,
-    // reportsQuery: reportsQueryReducer,
+    reports: reportsReducer,
+    reportsQuery: reportsQueryReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
