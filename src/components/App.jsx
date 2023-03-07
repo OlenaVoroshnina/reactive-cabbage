@@ -15,11 +15,14 @@ import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import { ExpensesPage } from 'pages/ExpensesPage';
 import { ReportPage } from 'pages/ReportPage';
+
 import { MainPage } from 'pages/MainPage';
+
 
 export const App = () => {
   return (
     <div>
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -39,6 +42,7 @@ export const App = () => {
         </Routes>
        
       </Suspense>
+
     </div>
   );
 };
