@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllUserInfo, logIn } from 'redux/auth/operation';
-import * as transactionsAPI from 'redux/transactions/operation';
+import {addIncome, getIncome, addExpense, getExpense,deleteTransaction, getIncomeCategories, getExpenseCategories,getTransactionsByDate, updateBalance } from 'redux/transactions/operation';
 
 import { setAccessToken } from 'redux/auth/authSlice';
 
@@ -37,39 +37,39 @@ const transactionsSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(transactionsAPI.addIncome.pending, handlePending)
-      .addCase(transactionsAPI.addIncome.fulfilled, (state, action) => {
+      .addCase(addIncome.pending, handlePending)
+      .addCase(addIncome.fulfilled, (state, action) => {
         state.balance = action.payload.newBalance;
         state.incomes.push(action.payload.transaction);
         state.transactions.push(action.payload.transaction);
       })
-      .addCase(transactionsAPI.addIncome.rejected, handleRejected)
+      .addCase(addIncome.rejected, handleRejected)
 
-      .addCase(transactionsAPI.getIncome.pending, handlePending)
-      .addCase(transactionsAPI.getIncome.fulfilled, (state, action) => {
+      .addCase(getIncome.pending, handlePending)
+      .addCase(getIncome.fulfilled, (state, action) => {
         state.incomes = action.payload.incomes;
         state.incomesStats = action.payload.monthsStats;
       })
-      .addCase(transactionsAPI.getIncome.rejected, handleRejected)
+      .addCase(getIncome.rejected, handleRejected)
 
-      .addCase(transactionsAPI.addExpense.pending, handlePending)
-      .addCase(transactionsAPI.addExpense.fulfilled, (state, action) => {
+      .addCase(addExpense.pending, handlePending)
+      .addCase(addExpense.fulfilled, (state, action) => {
         state.balance = action.payload.newBalance;
         state.expenses.push(action.payload.transaction);
         state.transactions.push(action.payload.transaction);
         // state.isLoading = false;
       })
-      .addCase(transactionsAPI.addExpense.rejected, handleRejected)
+      .addCase(addExpense.rejected, handleRejected)
 
-      .addCase(transactionsAPI.getExpense.pending, handlePending)
-      .addCase(transactionsAPI.getExpense.fulfilled, (state, action) => {
+      .addCase(getExpense.pending, handlePending)
+      .addCase(getExpense.fulfilled, (state, action) => {
         state.expenses = action.payload.expenses;
         state.expensesStats = action.payload.monthsStats;
       })
-      .addCase(transactionsAPI.getExpense.rejected, handleRejected)
+      .addCase(getExpense.rejected, handleRejected)
 
-      .addCase(transactionsAPI.deleteTransaction.pending, handlePending)
-      .addCase(transactionsAPI.deleteTransaction.fulfilled, (state, action) => {
+      .addCase(deleteTransaction.pending, handlePending)
+      .addCase(deleteTransaction.fulfilled, (state, action) => {
         state.balance = action.payload.newBalance;
         let index = state.incomes.findIndex(
           transaction => transaction._id === action.meta.arg
@@ -83,29 +83,29 @@ const transactionsSlice = createSlice({
           state.incomes.splice(index, 1);
         }
       })
-      .addCase(transactionsAPI.deleteTransaction.rejected, handleRejected)
+      .addCase(deleteTransaction.rejected, handleRejected)
 
-      .addCase(transactionsAPI.getIncomeCategories.pending, handlePending)
+      .addCase(getIncomeCategories.pending, handlePending)
       .addCase(
-        transactionsAPI.getIncomeCategories.fulfilled,
+        getIncomeCategories.fulfilled,
         (state, action) => {
           state.incomeCategories = action.payload;
         }
       )
-      .addCase(transactionsAPI.getIncomeCategories.rejected, handleRejected)
+      .addCase(getIncomeCategories.rejected, handleRejected)
 
-      .addCase(transactionsAPI.getExpenseCategories.pending, handlePending)
+      .addCase(getExpenseCategories.pending, handlePending)
       .addCase(
-        transactionsAPI.getExpenseCategories.fulfilled,
+        getExpenseCategories.fulfilled,
         (state, action) => {
           state.expenseCategories = action.payload;
         }
       )
-      .addCase(transactionsAPI.getExpenseCategories.rejected, handleRejected)
+      .addCase(getExpenseCategories.rejected, handleRejected)
 
-      .addCase(transactionsAPI.getTransactionsByDate.pending, handlePending)
+      .addCase(getTransactionsByDate.pending, handlePending)
       .addCase(
-        transactionsAPI.getTransactionsByDate.fulfilled,
+        getTransactionsByDate.fulfilled,
         (state, action) => {
           state.reportsData = action.payload;
           state.incomes = action.payload.incomes;
@@ -114,7 +114,7 @@ const transactionsSlice = createSlice({
           state.expenseTotal = action.payload.expenses.expenseTotal;
         }
       )
-      .addCase(transactionsAPI.getTransactionsByDate.rejected, handleRejected)
+      .addCase(getTransactionsByDate.rejected, handleRejected)
 
       .addCase(getAllUserInfo.pending, handlePending)
       .addCase(getAllUserInfo.fulfilled, (state, action) => {
@@ -128,11 +128,11 @@ const transactionsSlice = createSlice({
       })
       .addCase(logIn.rejected, handleRejected)
 
-      .addCase(transactionsAPI.updateBalance.pending, handlePending)
-      .addCase(transactionsAPI.updateBalance.fulfilled, (state, action) => {
+      .addCase(updateBalance.pending, handlePending)
+      .addCase(updateBalance.fulfilled, (state, action) => {
         state.balance = action.payload.newBalance;
       })
-      .addCase(transactionsAPI.updateBalance.rejected, handleRejected);
+      .addCase(updateBalance.rejected, handleRejected);
   },
 });
 
