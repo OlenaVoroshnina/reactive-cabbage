@@ -13,7 +13,7 @@ import { Layout } from './Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import { ExpensesPage } from 'pages/ExpensesPage';
-import { ReportsPage } from 'pages/ReportsPage';
+import { ReportPage } from 'pages/ReportPage';
 import { MainPage } from 'pages/MainPage';
 import { Transactions } from './Transactions/Transactions';
 
