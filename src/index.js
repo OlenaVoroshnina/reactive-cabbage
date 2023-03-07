@@ -14,19 +14,19 @@ import { GlobalStyle, theme } from './styles';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider 
+    <Provider
     // store={store}
     >
-      <PersistGate 
+      <PersistGate
       // loading={null} persistor={persistor}
       >
         <ThemeProvider theme={theme}>
           <Global styles={GlobalStyle} />
-            <BrowserRouter 
-            basename="/reactive-cabbage"
-            >
-              <App />
-            </BrowserRouter>
+          <BrowserRouter
+          // basename="/reactive-cabbage"
+          >
+            <App />
+          </BrowserRouter>
         </ThemeProvider>
       </PersistGate>
     </Provider>
