@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/reactive-cabbage/static/css/main.c3d5249d.css",
-    "main.js": "/reactive-cabbage/static/js/main.a72c7ff3.js",
+    "main.js": "/reactive-cabbage/static/js/main.6bd54dd5.js",
     "index.html": "/reactive-cabbage/index.html",
     "main.c3d5249d.css.map": "/reactive-cabbage/static/css/main.c3d5249d.css.map",
-    "main.a72c7ff3.js.map": "/reactive-cabbage/static/js/main.a72c7ff3.js.map"
+    "main.6bd54dd5.js.map": "/reactive-cabbage/static/js/main.6bd54dd5.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.a72c7ff3.js"
+    "static/js/main.6bd54dd5.js"
   ]
 }
