@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateBalance } from 'redux/transactions/operation';
 import { selectBalance, selectIsLoading } from 'redux/selectors';
-import UniversalModal from 'components/UniversalModal/universalModal';
+import UniversalModal from 'components/UniversalModal/UniversalModal';
 import BalanceModal from 'components/BalanceModal/BalanceModal';
 
 const Balance = () => {
