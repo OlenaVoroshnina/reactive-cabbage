@@ -16,7 +16,7 @@ const Balance = () => {
   let newBalance;
 
   const handleSubmit = e => {
-    event.preventDefault();
+    e.preventDefault();
     newBalance = e.target.balance.value;
   };
 
