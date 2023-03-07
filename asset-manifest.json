@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/reactive-cabbage/static/css/main.c3d5249d.css",
-    "main.js": "/reactive-cabbage/static/js/main.62ba0b88.js",
+    "main.js": "/reactive-cabbage/static/js/main.bb2eb52f.js",
+    "static/media/logo.svg": "/reactive-cabbage/static/media/logo.9a1219fa7b0c5ccef923ebbd77f9ee7b.svg",
     "index.html": "/reactive-cabbage/index.html",
     "main.c3d5249d.css.map": "/reactive-cabbage/static/css/main.c3d5249d.css.map",
-    "main.62ba0b88.js.map": "/reactive-cabbage/static/js/main.62ba0b88.js.map"
+    "main.bb2eb52f.js.map": "/reactive-cabbage/static/js/main.bb2eb52f.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.62ba0b88.js"
+    "static/js/main.bb2eb52f.js"
   ]
 }
