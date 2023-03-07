@@ -7,7 +7,7 @@ import {translateToEng} from "../../hooks/useCategory";
 
 import BgcIcon from "../../images/imgReports/bgcForSvg.svg";
 import OrangeBgc from "../../images/imgReports/orangeBgc.svg";
-import iconReports from "../../images/imgReports/reports.svg"
+import iconReports from "../../images/imgReports/reports.svg";
 
 
 export const ReportsList = ({ onChange }) => {
