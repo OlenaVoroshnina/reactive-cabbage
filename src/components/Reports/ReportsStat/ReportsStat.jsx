@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIncomeTotal, selectExpensesTotal } from 'redux/selectors';
 import { filteredDataAction } from 'redux/reportsQuery/reportsQuerySlice';
 
-// import { ReportsList } from 'components/Reports/ReportsList/ReportsList';
+import { ReportsList } from 'components/Reports/ReportsList';
 import ButtonsSwitch from 'components/Reports/ButtonSwitch/ButtonSwitch';
 // import { ReportsTable } from 'components/Reports/Table/ReportsTable';
 
@@ -55,7 +55,7 @@ export const ReportsStat = () => {
           </ButtonsSwitch>
         </Nav>
 
-        {/* <ReportsList onChange={budget}></ReportsList> */}
+        <ReportsList onChange={budget}></ReportsList>
       </Box>
 
       {/* <ReportsTable onChange={budget}></ReportsTable> */}
