@@ -1,3 +1,4 @@
+import React from 'react';
 import { createPortal } from 'react-dom';
 import { closeImg } from '../../images/close.svg';
 import { useEffect } from 'react';
@@ -5,7 +6,7 @@ import { useEffect } from 'react';
 const modalRoot = document.querySelector('#modal-root');
 const body = document.querySelector('body');
 
-const logOutModal = ({
+const LogOutModal = ({
   children,
   closeModal,
   dispatch,
@@ -60,4 +61,4 @@ const logOutModal = ({
   );
 };
 
-export default logOutModal;
+export default LogOutModal;
