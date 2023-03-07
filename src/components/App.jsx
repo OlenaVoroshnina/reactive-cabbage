@@ -7,13 +7,13 @@ import { Suspense } from 'react';
 // import { PrivateRoute } from './PrivateRoute';
 // import RestrictedRoute from "./RestrictedRoute"
 import { Loader } from './Loader/Loader';
-import { HomePage } from 'pages/HomePage';
+import { HomePage } from 'pages/HomePage/HomePage';
 import { IncomePage } from 'pages/IncomePage';
 import { Layout } from './Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import { ExpensesPage } from 'pages/ExpensesPage';
-import { ReportPage } from 'pages/ReportPage';
+import { ReportsPage } from 'pages/ReportsPage';
 import { MainPage } from 'pages/MainPage';
 
 export const App = () => {
@@ -23,7 +23,8 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<MainPage />} />
-            <Route path="/login" element={<LoginPage />} />
+
+						  <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
 
             <Route path="/home" element={<HomePage />}>
@@ -31,7 +32,7 @@ export const App = () => {
               <Route path="income" element={<IncomePage />} />
               <Route path="expenses" element={<ExpensesPage />} />
             </Route>
-            <Route path="/reports" element={<ReportPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
             <Route path="*" element={<Navigate to="/" replace={true} />} />
           </Route>
         </Routes>
