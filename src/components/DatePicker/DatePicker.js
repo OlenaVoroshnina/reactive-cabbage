@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import { StyledDatePicker } from './DatePicker.styled';
-// import { ReactComponent as Calendar } from '../../images/calendar.svg';
+import { ReactComponent as Calendar } from '../../images/calendar.svg';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const SelectDataPicker = ({ startDate, setStartDate }) => {
