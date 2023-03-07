@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 // import { PrivateRoute } from './PrivateRoute';
 // import RestrictedRoute from "./RestrictedRoute"
 import { Loader } from './Loader/Loader';
-import { HomePage } from 'pages/HomePage';
+import HomePage from 'pages/HomePage';
 import { IncomePage } from 'pages/IncomePage';
 import { Layout } from './Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';

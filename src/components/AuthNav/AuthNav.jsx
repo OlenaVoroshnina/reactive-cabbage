@@ -24,23 +24,23 @@ export const AuthNav = () => {
   };
 
   return (
-    isLoggedIn && (
-      <>
-        <nav>
-          <div>{userEmail[0].toUpperCase()}</div>
-          <p>{userEmail}</p>
-          <img src={logoutImg} alt="logout" onClick={handleModalOpen} />
-          <span></span>
-          <button type="button" onClick={handleModalOpen}>
-            Exit
-          </button>
-        </nav>
-        {modalOpen && (
-          <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
-            Do you really want to leave?
-          </UniversalModal>
-        )}
-      </>
-    )
+    // isLoggedIn && (
+    <>
+      <nav>
+        <div>{userEmail[0].toUpperCase()}</div>
+        <p>{userEmail}</p>
+        <img src={logoutImg} alt="logout" onClick={handleModalOpen} />
+        <span></span>
+        <button type="button" onClick={handleModalOpen}>
+          Exit
+        </button>
+      </nav>
+      {modalOpen && (
+        <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
+          Do you really want to leave?
+        </UniversalModal>
+      )}
+    </>
   );
+  // );
 };
