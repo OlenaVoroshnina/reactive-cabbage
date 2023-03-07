@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { closeImg } from '../../images/close.svg';
+import closeIcon from '../../images/close.svg';
 import { useEffect } from 'react';
 
 import MainBtn from 'components/Buttons/MainBtn';
@@ -41,7 +41,7 @@ const UniversalModal = ({
     <div onClick={handleBackdropClose}>
       <div>
         <button onClick={closeModal}>
-          <img src={closeImg} alt="close" />
+          <img src={closeIcon} alt="close" />
         </button>
         <div>
           <p>{children}</p>

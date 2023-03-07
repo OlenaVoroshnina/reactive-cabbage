@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateBalance } from 'redux/transactions/operation';
 import { selectBalance, selectIsLoading } from 'redux/selectors';
-import UniversalModal from 'components/UniversalModal/universalModal';
+import UniversalModal from '../universalModal/universalModal';
 import BalanceModal from 'components/BalanceModal/BalanceModal';
 
 const Balance = () => {
@@ -16,7 +16,7 @@ const Balance = () => {
   let newBalance;
 
   const handleSubmit = e => {
-    event.preventDefault();
+    e.preventDefault();
     newBalance = e.target.balance.value;
   };
 
