@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme } from './theme';
+import theme from './theme';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 body{
 	background-color: ${theme.colors.bgWhite};
 	font-family: ${theme.fonts.body};
@@ -34,3 +34,5 @@ img {
 	height: auto;
 }
 ;`;
+
+export default GlobalStyle;
