@@ -8,7 +8,7 @@ import SecondaryBtn from 'components/Buttons/SecondaryBtn';
 const modalRoot = document.querySelector('#modal-root');
 const body = document.querySelector('body');
 
-const universalModal = ({
+const UniversalModal = ({
   children,
   closeModal,
   dispatch,
@@ -63,4 +63,4 @@ const universalModal = ({
   );
 };
 
-export default universalModal;
+export default UniversalModal;

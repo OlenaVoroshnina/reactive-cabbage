@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import logoutImg from 'images/logout.svg';
 import { selectIsLoggedIn, selectUserEmail } from 'redux/selectors';
-import { universalModal } from 'components/universalModal/universalModal';
+import { UniversalModal } from 'components/UniversalModal/UniversalModal';
+import { logOut } from 'redux/auth/operation';
 
 export const AuthNav = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,9 +36,9 @@ export const AuthNav = () => {
           </button>
         </nav>
         {modalOpen && (
-          <universalModal closeModal={handleModalClose} dispatch={handleClick}>
+          <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
             Do you really want to leave?
-          </universalModal>
+          </UniversalModal>
         )}
       </>
     )
