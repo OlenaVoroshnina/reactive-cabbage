@@ -20,6 +20,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshToken } from 'redux/auth/operation';
 import { Navbar } from './Navbar/Navbar';
+import AnimatCursor from 'components/AnimatedCursor/AnimatedCursor';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -30,9 +31,10 @@ export const App = () => {
 
   return (
     <div>
+      <AnimatCursor />
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route path="/" element={<MainPage />} />
+          {/* <Route path="/" element={<MainPage />} /> */}
           <Route
             path="/login"
             element={
@@ -54,7 +56,7 @@ export const App = () => {
               <PrivateRoute redirectTo="/login" component={<HomePage />} />
             }
           ></Route>
-          <Route
+          {/* <Route
             path="income"
             element={
               <PrivateRoute redirectTo="/login" component={<IncomePage />} />
@@ -65,7 +67,7 @@ export const App = () => {
             element={
               <PrivateRoute redirectTo="/login" component={<ExpensesPage />} />
             }
-          ></Route>
+          ></Route> */}
           <Route
             path="/reports"
             element={
@@ -73,7 +75,9 @@ export const App = () => {
             }
           ></Route>
         </Route>
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
+
       {/* <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>

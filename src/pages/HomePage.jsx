@@ -3,6 +3,7 @@ import Balance from 'components/Balance/Balance';
 import { ReactComponent as ReportsIcon } from '../images/reports-icon.svg';
 import { NavTransactions } from 'components/Transactions/NavTransactions';
 import { ListTransactions } from 'components/Transactions/ListTransactions';
+import { NavLink } from 'react-router-dom';
 
 export const HomePage = () => {
   const location = useLocation();
@@ -10,9 +11,12 @@ export const HomePage = () => {
   return (
     <>
       <div>
-        {/* home page */}
         <div>
           {/* <Balance /> */}
+          <NavLink to="/expenses">ExpensesPage</NavLink>
+          <br />
+          <NavLink to="/income">IncomePage</NavLink>
+          <br />
           <Link to="/reports" state={{ from: location }}>
             <span>Reports</span>
             <ReportsIcon />
