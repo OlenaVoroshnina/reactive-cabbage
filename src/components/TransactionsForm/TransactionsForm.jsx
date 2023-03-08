@@ -11,7 +11,10 @@ export const TransactionsForm = () => {
   const newDate = format(new Date(2014, 1, 11), 'yyyy-MM-dd');
 
   const onInputChange = event => {
-    const { name, value } = event.currentTarget;
+    let { name, value } = event.currentTarget;
+    if (name === 'amount') {
+      value = Number(value);
+    }
     setFormData(prevState => ({
       ...prevState,
       category: 'transport',
