@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import Balance from 'components/Balance/Balance';
 import { ReactComponent as ReportsIcon } from '../images/reports-icon.svg';
@@ -26,3 +27,8 @@ export const HomePage = () => {
 };
 
 export default HomePage;
+=======
+export const HomePage = () => {
+  return <>Home Page</>;
+};
+>>>>>>> de87035 (add register)
