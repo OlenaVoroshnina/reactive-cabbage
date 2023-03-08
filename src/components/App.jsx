@@ -8,11 +8,11 @@ import { PrivateRoute } from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
 // import { Loader } from './Loader/Loader';
 import HomePage from 'pages/HomePage/HomePage';
-import { Income } from 'components/Income/Income';
+import Income from 'components/Income/Income';
 // import { Layout } from './Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
-import { Expenses } from 'components/Expenses/Expenses';
+import Expenses from 'components/Expenses/Expenses';
 import { ReportPage } from 'pages/ReportPage';
 import { MainPage } from 'pages/MainPage';
 
