@@ -3,9 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsLoggedIn, selectBalance } from 'redux/selectors';
 import { getExpense } from 'redux/transactions/operation';
-import { InputForm } from 'components/InputForm/InputForm';
-import { ListTransactions } from 'components/Transactions/ListTransactions';
-import DatePicker from 'components/DatePicker';
+import { Transactions } from 'components/Transactions/Transactions';
 
 export const Expenses = () => {
   const dispatch = useDispatch();
@@ -21,12 +19,11 @@ export const Expenses = () => {
   return (
     <>
       <div>
-        <DatePicker />
-        <InputForm />
-
+        <Transactions />
         <Outlet />
-        <ListTransactions />
       </div>
     </>
   );
 };
+
+export default Expenses;
