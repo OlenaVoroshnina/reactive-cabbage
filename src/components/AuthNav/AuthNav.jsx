@@ -3,6 +3,7 @@ import { useState } from 'react';
 import logoutImg from 'images/logout.svg';
 import { selectUserEmail } from 'redux/selectors';
 // import { selectIsLoggedIn} from 'redux/selectors';
+
 // import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { logOut } from 'redux/auth/operation';
 
