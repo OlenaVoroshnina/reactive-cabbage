@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import Balance from 'components/Balance/Balance';
+// import Balance from 'components/Balance/Balance';
 import { ReactComponent as ReportsIcon } from '../images/reports-icon.svg';
 import { NavTransactions } from 'components/Transactions/NavTransactions';
 import { ListTransactions } from 'components/Transactions/ListTransactions';
