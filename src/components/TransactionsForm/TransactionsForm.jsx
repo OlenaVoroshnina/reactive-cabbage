@@ -1,30 +1,43 @@
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 // import { addExpense } from 'redux/transactions/operation';
+import SelectDataPicker from 'components/DatePicker/DatePicker';
 import css from './TransactionsForm.module.css';
 
 export const TransactionsForm = () => {
+  const [formData, setFormData] = useState({});
+  // const dispatch = useDispatch();
+
+  const onInputChange = event => {
+    const { name, value } = event.currentTarget;
+    setFormData(prevState => ({
+      ...prevState,
+      category: 'transport',
+      [name]: value,
+    }));
+  };
+
   const onFormSubmit = event => {
     event.preventDefault();
-    const inputs = Object.values(event.currentTarget).filter(
-      el => el.nodeName === 'INPUT' || el.nodeName === 'SELECT'
-    );
-    let formData = {}; // объект с данными из инпутов собирается правильно
-    inputs.map(el => (formData = { ...formData, [el.name]: el.value }));
-    // addExpense(formData); ошибка при попытке отправить данные на бекенд
+    console.log(formData);
+    // dispatch(addExpense(formData)); ошибка при попытке отправить данные на бекенд
   };
 
   return (
     <form className={css.transactionsForm} onSubmit={onFormSubmit}>
-      <input type="date" name="date" className={css.transactionsInputDate} />
-      {/* Заменить календарь на компонент Леси */}
+      <SelectDataPicker />
+      {/* добавить пропс, который вернет name='date' и value=дата */}
       <input
         type="text"
         name="description"
         className={css.transactionsInputProduct}
+        onChange={onInputChange}
       />
       <select
         name="category"
         id="category"
         className={css.transactionsProductType}
+        onChange={onInputChange}
       >
         <option value="transport">Transport</option>
         <option value="products">Products</option>
@@ -42,6 +55,7 @@ export const TransactionsForm = () => {
         type="number"
         name="amount"
         className={css.transactionsInputAmount}
+        onChange={onInputChange}
       />
       <button type="submit" className={css.transactionsSubmitBtn}>
         Input
