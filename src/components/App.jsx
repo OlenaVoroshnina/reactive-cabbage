@@ -34,7 +34,7 @@ export const App = () => {
       <AnimatCursor />
       <Routes>
         <Route path="/" element={<Navbar />}>
-          {/* <Route path="/" element={<MainPage />} /> */}
+          <Route path="/" element={<MainPage />} />
           <Route
             path="/login"
             element={
@@ -56,7 +56,7 @@ export const App = () => {
               <PrivateRoute redirectTo="/login" component={<HomePage />} />
             }
           ></Route>
-          {/* <Route
+          <Route
             path="income"
             element={
               <PrivateRoute redirectTo="/login" component={<IncomePage />} />
@@ -67,7 +67,7 @@ export const App = () => {
             element={
               <PrivateRoute redirectTo="/login" component={<ExpensesPage />} />
             }
-          ></Route> */}
+          ></Route>
           <Route
             path="/reports"
             element={
@@ -75,7 +75,7 @@ export const App = () => {
             }
           ></Route>
         </Route>
-        <Route path="*" element={<Navigate to="/login" />} />
+        {/* <Route path="*" element={<Navigate to="/login" />} /> */}
       </Routes>
 
       {/* <Suspense fallback={<Loader />}>
