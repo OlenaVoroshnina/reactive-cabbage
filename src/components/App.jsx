@@ -40,6 +40,8 @@ export const App = () => {
         </Suspense>
       </div>
       <Transactions />
+      <ReportPage />
+
     </>
   );
 };
