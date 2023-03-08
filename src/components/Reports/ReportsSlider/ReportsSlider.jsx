@@ -6,9 +6,9 @@ import {
   filteredDataAction,
 } from 'redux/reportsQuery/reportsQuerySlice';
 
-import ButtonsSwitch from 'components/Reports/ButtonsSwitch/ButtonsSwitch';
+import ButtonsSwitch from '../ButtonSwitch/ButtonSwitch';
 import { monthNames, getMonth, getYear } from './ReportsSliderData';
-import { getTransactionsByDate } from 'redux/auth/operation';
+import { getTransactionsByDate } from '../../../redux/transactions/operation';
 import { Wrapper, Text, ReportSliderTitle } from './ReportsSlider.styled';
 
 const ReportsSlider = () => {
