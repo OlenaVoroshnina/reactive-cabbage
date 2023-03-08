@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import Balance from 'components/Balance/Balance';
 import { ReactComponent as ReportsIcon } from '../images/reports-icon.svg';
@@ -7,12 +6,13 @@ import { ListTransactions } from 'components/Transactions/ListTransactions';
 
 export const HomePage = () => {
   const location = useLocation();
-  
+
   return (
     <>
       <div>
+        {/* home page */}
         <div>
-          <Balance />
+          {/* <Balance /> */}
           <Link to="/reports" state={{ from: location }}>
             <span>Reports</span>
             <ReportsIcon />
@@ -27,8 +27,3 @@ export const HomePage = () => {
 };
 
 export default HomePage;
-=======
-export const HomePage = () => {
-  return <>Home Page</>;
-};
->>>>>>> de87035 (add register)

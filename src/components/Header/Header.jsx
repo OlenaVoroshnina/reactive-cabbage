@@ -7,14 +7,12 @@ import { StyledHeader } from './Header.styled';
 
 export const Header = () => {
   return (
- 
-      <StyledHeader>
-        <Container>
-          <Link to="/">
-            <img src={logoImg} alt="logo" />
-          </Link>
-        </Container>
-      </StyledHeader>
-
+    <StyledHeader>
+      <Container>
+        <Link to="/">
+          <img src={logoImg} alt="logo" />
+        </Link>
+      </Container>
+    </StyledHeader>
   );
 };
