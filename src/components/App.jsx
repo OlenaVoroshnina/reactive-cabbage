@@ -32,50 +32,46 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route path="/" element={<MainPage />}>
-            <Route
-              path="/login"
-              element={
-                <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <RestrictedRoute
-                  redirectTo="/home"
-                  component={<RegisterPage />}
-                />
-              }
-            />
-            <Route
-              path="/home"
-              element={
-                <PrivateRoute redirectTo="/login" component={<HomePage />} />
-              }
-            ></Route>
-            <Route
-              path="income"
-              element={
-                <PrivateRoute redirectTo="/login" component={<IncomePage />} />
-              }
-            ></Route>
-            <Route
-              path="expenses"
-              element={
-                <PrivateRoute
-                  redirectTo="/login"
-                  component={<ExpensesPage />}
-                />
-              }
-            ></Route>
-            <Route
-              path="/reports"
-              element={
-                <PrivateRoute redirectTo="/login" component={<ReportPage />} />
-              }
-            ></Route>
-          </Route>
+          <Route path="/" element={<MainPage />} />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/home"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute redirectTo="/login" component={<HomePage />} />
+            }
+          ></Route>
+          <Route
+            path="income"
+            element={
+              <PrivateRoute redirectTo="/login" component={<IncomePage />} />
+            }
+          ></Route>
+          <Route
+            path="expenses"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ExpensesPage />} />
+            }
+          ></Route>
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ReportPage />} />
+            }
+          ></Route>
         </Route>
       </Routes>
       {/* <Suspense fallback={<Loader />}>
