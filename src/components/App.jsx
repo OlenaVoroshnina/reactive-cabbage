@@ -13,7 +13,7 @@ import Income from 'components/Income/Income';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import Expenses from 'components/Expenses/Expenses';
-import { ReportPage } from 'pages/ReportPage';
+import { ReportPage } from 'pages/ReportPage/ReportPage';
 import { MainPage } from 'pages/MainPage';
 
 import { useEffect } from 'react';

@@ -1,7 +1,7 @@
-// import { StyledBgCabbage } from './BgCabbage.styled';
+import { StyledBgCabbage } from './BgCabbage.styled';
 
-// const BgCabbage = () => {
-//   return <StyledBgCabbage />;
-// };
+const BgCabbage = () => {
+  return <StyledBgCabbage />;
+};
 
-// export default BgCabbage;
+export default BgCabbage;
