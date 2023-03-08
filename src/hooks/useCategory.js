@@ -1,31 +1,31 @@
-export const translateToUk = name => {
+export const translateToRus = name => {
   switch (name.trim()) {
     case 'Products':
-      return 'Продукти';
+      return 'Продукты';
     case 'Alcohol':
       return 'Алкоголь';
     case 'Entertainment':
-      return 'Разваги';
+      return 'Развлечения';
     case 'Health':
-      return "Здоров'я";
+      return 'Здоровье';
     case 'Transport':
       return 'Транспорт';
     case 'Housing':
-      return 'Все для дому';
+      return 'Всё для дома';
     case 'Technique':
-      return 'Техніка';
+      return 'Техника';
     case 'Communal, communication':
-      return "Комунальні платежі та зв'язок";
+      return 'Коммуналка и связь';
     case 'Sports, hobbies':
-      return 'Спорт та хоббі';
+      return 'Спорт и хобби';
     case 'Education':
-      return 'Освіта';
+      return 'Образование';
     case 'Other':
-      return 'Інше';
+      return 'Прочее';
     case 'Salary':
-      return 'Заробітна плата';
+      return 'З/П';
     case 'Additional income':
-      return 'Додатковий дохід';
+      return 'Доп. доход';
     default:
       break;
   }
@@ -33,31 +33,31 @@ export const translateToUk = name => {
 
 export const translateToEng = name => {
   switch (name.trim()) {
-    case 'Продукти':
+    case 'Продукты':
       return 'Products';
     case 'Алкоголь':
       return 'Alcohol';
-    case 'Разваги':
+    case 'Развлечения':
       return 'Entertainment';
-    case "Здоров'я":
+    case 'Здоровье':
       return 'Health';
     case 'Транспорт':
       return 'Transport';
-    case 'Все для дому':
+    case 'Всё для дома':
       return 'Housing';
-    case 'Техніка':
+    case 'Техника':
       return 'Technique';
-    case "Комунальні платежі та зв'язок":
+    case 'Коммуналка и связь':
       return 'Communal, communication';
-    case 'Спорт та хоббі':
+    case 'Спорт и хобби':
       return 'Sports, hobbies';
-    case 'Освіта':
+    case 'Образование':
       return 'Education';
-    case 'Інше':
+    case 'Прочее':
       return 'Other';
-    case 'Заробітна плата':
+    case 'З/П':
       return 'Salary';
-    case 'Додатковий дохід':
+    case 'Доп. доход':
       return 'Additional income';
     default:
       break;
