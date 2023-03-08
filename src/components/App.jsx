@@ -92,7 +92,5 @@ export const App = () => {
         </Routes>
       </Suspense> */}
     </div>
-      
-
   );
 };

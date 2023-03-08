@@ -3,16 +3,19 @@ import { useState } from 'react';
 // import { addExpense } from 'redux/transactions/operation';
 import SelectDataPicker from 'components/DatePicker/DatePicker';
 import css from './TransactionsForm.module.css';
+import { format } from 'date-fns';
 
 export const TransactionsForm = () => {
   const [formData, setFormData] = useState({});
   // const dispatch = useDispatch();
+  const newDate = format(new Date(2014, 1, 11), 'yyyy-MM-dd');
 
   const onInputChange = event => {
     const { name, value } = event.currentTarget;
     setFormData(prevState => ({
       ...prevState,
       category: 'transport',
+      date: newDate,
       [name]: value,
     }));
   };
@@ -23,21 +26,28 @@ export const TransactionsForm = () => {
     // dispatch(addExpense(formData)); ошибка при попытке отправить данные на бекенд
   };
 
+  const getDate = newDate => {
+    setFormData({
+      date: newDate,
+    });
+  };
+
   return (
     <form className={css.transactionsForm} onSubmit={onFormSubmit}>
-      <SelectDataPicker />
-      {/* добавить пропс, который вернет name='date' и value=дата */}
+      <SelectDataPicker getDate={getDate} />
       <input
         type="text"
         name="description"
         className={css.transactionsInputProduct}
         onChange={onInputChange}
+        required
       />
       <select
         name="category"
         id="category"
         className={css.transactionsProductType}
         onChange={onInputChange}
+        required
       >
         <option value="transport">Transport</option>
         <option value="products">Products</option>
@@ -56,6 +66,7 @@ export const TransactionsForm = () => {
         name="amount"
         className={css.transactionsInputAmount}
         onChange={onInputChange}
+        required
       />
       <button type="submit" className={css.transactionsSubmitBtn}>
         Input
