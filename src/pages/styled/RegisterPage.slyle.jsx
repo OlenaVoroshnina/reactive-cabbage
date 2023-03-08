@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import BgCabbage from '../../images/imgReports/title_kapusta.png';
+// import BgCabbage from '../../images/imgReports/title_kapusta.png';
 
 export const Container = styled.div`
   position: relative;
@@ -220,7 +220,7 @@ export const Input = styled.input`
   width: 100%;
   font-size: 14px;
   font-family: 'Roboto';
-  placeholder: #a6abb9;
+  /* placeholder: #a6abb9; */
   background-color: #f6f7fb;
   border-radius: 30px;
   border: none;
