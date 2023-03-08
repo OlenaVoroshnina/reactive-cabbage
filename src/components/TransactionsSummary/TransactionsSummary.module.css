@@ -1,0 +1,28 @@
+.summaryTable {
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 230px;
+  @media (min-width: 1200px) {
+    width: 213px;
+  }
+}
+
+.summaryTableRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f6fb;
+  border-bottom: 2px solid transparent;
+}
+
+thead .summaryTableRow {
+  justify-content: center;
+}
+
+.summaryTableTitle {
+  text-align: center;
+  justify-content: center;
+  color: #000000;
+}
