@@ -6,12 +6,13 @@ import { ListTransactions } from 'components/Transactions/ListTransactions';
 
 export const HomePage = () => {
   const location = useLocation();
-  
+
   return (
     <>
       <div>
+        {/* home page */}
         <div>
-          <Balance />
+          {/* <Balance /> */}
           <Link to="/reports" state={{ from: location }}>
             <span>Reports</span>
             <ReportsIcon />
