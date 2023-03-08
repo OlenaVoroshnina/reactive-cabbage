@@ -1,9 +1,11 @@
+
 // import { useDispatch, useSelector } from 'react-redux';
 // import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
 // import { deleteTransaction } from 'redux/transactions/operation';
 // import { useState, useEffect } from 'react';
 // import UniversalModal from '../UniversalModal/UniversalModal';
 // import { getAllUserInfo } from 'redux/auth/operation';
+
 
 // export const ListTransactions = () => {
 //   const allTransactions = useSelector(state => state.auth.transactions);

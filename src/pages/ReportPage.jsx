@@ -1,13 +1,14 @@
 import React from 'react';
 import { ReportsStat } from 'components/Reports/ReportsStat/ReportsStat';
-// import { ReportsNav } from 'components/Reports/ReportsNav/ReportsNav';
+import { ReportsNav } from 'components/Reports/ReportsNav/ReportsNav';
 import { WraperBg } from './ReportPage.styled';
 
-export  function ReportPage() {
+export function ReportPage() {
   return (
     <WraperBg>
-      {/* <ReportsNav /> */}
+      <ReportsNav />
       <ReportsStat />
+      
     </WraperBg>
   );
 }

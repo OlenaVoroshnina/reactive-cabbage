@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIncomeTotal, selectExpensesTotal } from 'redux/selectors';
 import { filteredDataAction } from 'redux/reportsQuery/reportsQuerySlice';
 
-import { ReportsList } from 'components/Reports/ReportsList';
+import { ReportsList } from 'components/Reports/ReportsList/ReportsList';
 import ButtonsSwitch from 'components/Reports/ButtonSwitch/ButtonSwitch';
 // import { ReportsTable } from 'components/Reports/Table/ReportsTable';
+import { BarChartComponent } from 'components/Reports/BarChartComponent/BarChartComponent';
+
 
 import {
   List,
@@ -57,7 +59,7 @@ export const ReportsStat = () => {
 
         <ReportsList onChange={budget}></ReportsList>
       </Box>
-
+      <BarChartComponent />
       {/* <ReportsTable onChange={budget}></ReportsTable> */}
     </div>
   );
