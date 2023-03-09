@@ -4,14 +4,13 @@ import monthNameTranslate from './SummaryMonthTranslate';
 import css from './TransactionsSummary.module.css';
 
 import {
-  // selectIsLoading,
   selectIncomeSummary,
   selectExpensesSummary,
 } from 'redux/selectors';
 
 export const TransactionsSummary = () => {
 	 const location = useLocation();
-   // const isLoading = useSelector(selectIsLoading);
+  
    const incomeData = useSelector(selectIncomeSummary);
    const expensesData = useSelector(selectExpensesSummary);
 
