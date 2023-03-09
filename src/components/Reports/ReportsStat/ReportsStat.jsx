@@ -58,7 +58,7 @@ export const ReportsStat = () => {
 
         <ReportsList onChange={budget}></ReportsList>
       </Box>
-      <BarChartComponent />
+      <BarChartComponent budget={budget} />
       {/* <ReportsTable onChange={budget}></ReportsTable> */}
     </div>
   );
