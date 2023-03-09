@@ -49,7 +49,7 @@ export const ReportsList = ({ onChange }) => {
   
     return (
       <div>
-        <List className={onChange === 'income' ? 'incomeList' : ''}>
+        <List className={onChange === 'incomes' ? 'incomeList' : ''}>
           {entries.map(item => {
             const iconName = item[0].replace(/\s+/g, '');
             valueArr.push(item);
@@ -76,7 +76,7 @@ export const ReportsList = ({ onChange }) => {
                   <p>{translateToEng(item[0]).toUpperCase()}</p>
                 </Item>
               );
-            } else if (onChange === 'income') {
+            } else if (onChange === 'incomes') {
               return (
                 <ItemIncome
                   key={iconName}
