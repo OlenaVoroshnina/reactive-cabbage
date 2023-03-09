@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-// import { useState } from 'react';
+import { useState } from 'react';
 import { logIn } from 'redux/auth/operation';
 
 import {
@@ -7,7 +7,6 @@ import {
   TitleWrap,
   Title,
   FormContainer,
-  // Wrap,
   SubTitle,
   Form,
   Label,
@@ -18,14 +17,28 @@ import {
   ImageTitleLogo,
   ContentWrapper,
   BottomCabbages,
+  InputWrapper,
+  PasswordBtn,
+  PasswordIcon,
 } from 'pages/styled/RegisterPage.slyle';
 
 import { BackgroundLayout } from 'components/BackgroundLayout/BackgroundLayout';
 import LogoSrc from './../images/imgReports/title_kapusta.png';
 import TwoCabbages from './../images/cabbage/cabagesTwo.svg';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import EyeOpened from './../images/eye/eye-open.svg';
+import EyeClosed from './../images/eye/eye-blocked.svg';
+
 export const LoginPage = () => {
   const dispatch = useDispatch();
+  const [isPasswordShown, setIsPasswordShown] = useState(false);
+
+  const handleShowPassword = () => {
+    setIsPasswordShown(!isPasswordShown);
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -34,7 +47,12 @@ export const LoginPage = () => {
       email: email.value,
       password: password.value,
     };
-    dispatch(logIn(user));
+    dispatch(logIn(user)).then(data => {
+      if (data.error.message === 'Rejected') {
+        toast('Data entered incorrectly. Try again');
+        return;
+      }
+    });
     event.target.reset();
   };
 
@@ -49,7 +67,6 @@ export const LoginPage = () => {
         <FormContainer>
           <SubTitle>You can log in with your Google Account:</SubTitle>
           <div>GOOGLE</div>
-          {/* <Wrap> */}
           {/* <div>
             <p>You can log in with your Google Account:</p>
             <button href="https://kapusta-backend.goit.global/auth/google">
@@ -62,34 +79,47 @@ export const LoginPage = () => {
           </SubTitle>
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="logInEmail">Email:</Label>
-            <Input
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              pattern="[A-Za-zA-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zA-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zA-Яа-яЁёЄєЇї]{2,4}$"
-              id="logInEmail"
-              autoComplete="email"
-              autoFocus
-              required
-            />
+            <InputWrapper>
+              <Input
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                pattern="[A-Za-zA-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zA-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zA-Яа-яЁёЄєЇї]{2,4}$"
+                id="logInEmail"
+                autoComplete="email"
+                autoFocus
+                required
+              />
+            </InputWrapper>
             <Label htmlFor="logInPassword">Password:</Label>
-            <Input
-              type="password"
-              name="password"
-              placeholder="Password"
-              pattern="[0-9A-Za-zA-Яа-яЁёЄєЇї!@#$%^&*]{8,}"
-              autoComplete="current-password"
-              required
-            />
+            <InputWrapper>
+              <Input
+                type={isPasswordShown ? 'text' : 'password'}
+                name="password"
+                placeholder="Password"
+                pattern="[0-9A-Za-zA-Яа-яЁёЄєЇї!@#$%^&*]{8,}"
+                autoComplete="current-password"
+                required
+              />
+              <PasswordBtn onClick={handleShowPassword} type="button">
+                <PasswordIcon
+                  src={isPasswordShown ? EyeOpened : EyeClosed}
+                  alt="EyeOpened"
+                  width="20px"
+                  height="20px"
+                />
+              </PasswordBtn>
+            </InputWrapper>
+
             <ButtonsWrap>
               <SubmitBtn type="submit">Log In</SubmitBtn>
               <NavBtn to="/register">Registration</NavBtn>
             </ButtonsWrap>
           </Form>
-          {/* </Wrap> */}
         </FormContainer>
       </ContentWrapper>
       <BottomCabbages alt="Two Cabbages" src={TwoCabbages} />
+      <ToastContainer />
     </Container>
   );
 };
