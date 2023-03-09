@@ -40,7 +40,6 @@ export const HomePage = () => {
               <ReportsIcon />
             </Link>
           </div>
-
           <TabsStyled selectedIndex={index} onSelect={() => {}}>
             <TabListStyled>
               <TabStyled>

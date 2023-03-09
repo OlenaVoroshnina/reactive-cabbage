@@ -9,7 +9,7 @@ import { StyledBalanceForm } from 'components/Balance/Balance.styled';
 const Balance = () => {
   const transactionBalance = useSelector(selectBalance);
   // const isLoading = useSelector(selectIsLoading);
-  console.log(typeof transactionBalance);
+console.log(typeof transactionBalance);
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const form = useRef();
@@ -65,7 +65,7 @@ const Balance = () => {
           dispatch={handleClick}
           text="SURE"
           balance={transactionBalance}
-          onDelete={() => {}}
+          onDelete={()=>{}}
         >
           Are you sure?
         </UniversalModal>

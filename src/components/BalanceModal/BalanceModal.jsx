@@ -31,15 +31,15 @@ const BalanceModal = () => {
     return () => body.classList.remove('no-scroll');
   }, []);
 
-  return createPortal(
-    <StyledBackdrop onClick={handleBackdropClick}>
-      <StyledModal>
-        <StyledTitle>
-          Hello! To get started, enter the current balance of your account!
-        </StyledTitle>
-        <StyledText>You can't spend money until you have it :)</StyledText>
-      </StyledModal>
-    </StyledBackdrop>,
+  return createPortal( 
+      <StyledBackdrop onClick={handleBackdropClick}>
+        <StyledModal>
+          <StyledTitle>
+            Hello! To get started, enter the current balance of your account!
+          </StyledTitle>
+          <StyledText>You can't spend money until you have it :)</StyledText>
+        </StyledModal>
+      </StyledBackdrop>,
     modalRoot
   );
 };
