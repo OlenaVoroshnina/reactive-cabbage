@@ -70,11 +70,11 @@ export const BlockHeading = styled.div`
     text-decoration: none;
     font-size: 12px;
     color: rgba(82, 85, 95, 0.7);
-    transition: color ${props => props.theme.transition.normal};
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     :hover,
     :focus {
-      color: ${props => props.theme.colors.accentOrange};
+      color: #ff751d;
     }
   }
 
