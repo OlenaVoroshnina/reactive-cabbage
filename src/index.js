@@ -9,9 +9,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
 
 import 'modern-normalize';
-import {GlobalStyle} from 'styles/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
-import {theme} from 'styles/theme';
+import theme from 'styles/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
