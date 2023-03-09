@@ -59,7 +59,9 @@ export const TransactionsForm = () => {
   return (
     <form className={css.transactionsForm} onSubmit={onFormSubmit}>
       <div className={css.transactionsInputsWrap}>
-        <SelectDataPicker getDate={getDate} />
+        <div className={css.dateWrapper}>
+          <SelectDataPicker getDate={getDate} />
+        </div>
         <input
           type="text"
           name="description"

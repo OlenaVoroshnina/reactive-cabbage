@@ -21,11 +21,11 @@
     border-bottom-left-radius: 30%;
   }
 
-  /* .dateWrapper {
+  .dateWrapper {
     position: relative;
   }
 
-  .calendarIcon {
+  /* .calendarIcon {
     position: absolute;
     z-index: 2;
     left: -2px;
@@ -177,7 +177,6 @@
     width: 100%;
     margin: 0 auto;
     width: 624px;
-    height: 44px;
   }
 
   .transactionsInputsWrap {
@@ -185,11 +184,11 @@
     align-items: center;
   }
 
-  /* .dateWrapper {
+  .dateWrapper {
     position: relative;
   }
 
-  .calendarIcon {
+  /* .calendarIcon {
     position: absolute;
     z-index: 2;
     left: -5px;
@@ -210,9 +209,9 @@
     text-align: end;
     position: relative;
     z-index: 9;
-  }
+  } */
 
-    /* .datePicker::-webkit-calendar-picker-indicator {
+  /* .datePicker::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     z-index: 9;
     width: 90px;
@@ -381,10 +380,4 @@
     margin-left: 32px;
     margin-top: 0;
   }
-
-  /* .inputWrap {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-  } */
 }
