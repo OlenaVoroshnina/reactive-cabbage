@@ -53,3 +53,43 @@ export const NavLinkStyled = styled(NavLink)`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 `;
+
+export const BlockHeading = styled.div`
+  padding-top: 14px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-direction: column-reverse;
+
+  .reportLink {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+    font-size: 12px;
+    color: rgba(82, 85, 95, 0.7);
+    transition: color ${props => props.theme.transition.normal};
+
+    :hover,
+    :focus {
+      color: ${props => props.theme.colors.accentOrange};
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 251px;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 40px;
+    max-width: 704pxpx;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1098px;
+    gap: 298px;
+    justify-content: flex-end;
+  }
+`;

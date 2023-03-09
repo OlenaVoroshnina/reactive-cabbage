@@ -13,7 +13,7 @@ export const StyledBalanceForm = styled.form`
     margin: 0;
   }
   @media screen and (min-width: 768px) {
-    margin: 0 auto;
+   //  margin: 0 auto;
   }
   .title {
     color: rgba(82, 85, 95, 0.7);
