@@ -23,7 +23,7 @@ const UniversalModal = ({
   dispatch,
   changeBalance,
   text,
-  onDelete,
+  onDelete ,
 }) => {
   const handleEscapeClose = e => {
     if (e.code === 'Escape') {

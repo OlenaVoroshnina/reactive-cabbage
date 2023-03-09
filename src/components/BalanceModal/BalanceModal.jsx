@@ -32,7 +32,7 @@ const BalanceModal = () => {
   }, []);
 
   return createPortal(
-    isModalOpen && (
+    
       <StyledBackdrop onClick={handleBackdropClick}>
         <StyledModal>
           <StyledTitle>
@@ -41,7 +41,7 @@ const BalanceModal = () => {
           <StyledText>You can't spend money until you have it :)</StyledText>
         </StyledModal>
       </StyledBackdrop>
-    ),
+    ,
     modalRoot
   );
 };

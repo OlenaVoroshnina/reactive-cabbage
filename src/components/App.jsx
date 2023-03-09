@@ -31,7 +31,7 @@ export const App = () => {
 
   return (
     <div>
-      <AnimatCursor />
+      {/* <AnimatCursor /> */}
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route path="/" element={<MainPage />} />
@@ -57,13 +57,13 @@ export const App = () => {
             }
           ></Route>
           <Route
-            path="income"
+            path="/income"
             element={
               <PrivateRoute redirectTo="/login" component={<Income />} />
             }
           ></Route>
           <Route
-            path="expenses"
+            path="/expenses"
             element={
               <PrivateRoute redirectTo="/login" component={<Expenses />} />
             }

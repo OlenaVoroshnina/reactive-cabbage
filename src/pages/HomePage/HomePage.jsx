@@ -31,10 +31,10 @@ export const HomePage = () => {
         <TabsStyled>
           <TabListStyled>
             <TabStyled>
-              <NavLinkStyled to="expenses">Expenses</NavLinkStyled>
+              <NavLinkStyled to="/expenses">Expenses</NavLinkStyled>
             </TabStyled>
             <TabStyled>
-              <NavLinkStyled to="income">Income</NavLinkStyled>
+              <NavLinkStyled to="/income">Income</NavLinkStyled>
             </TabStyled>
           </TabListStyled>
           <TabPanel>{<Outlet />}</TabPanel>
