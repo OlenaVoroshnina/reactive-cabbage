@@ -28,7 +28,7 @@ export const ReportsStat = () => {
 
   const handleClick = () => {
     if (budget === 'expenses') {
-      setBudget('income');
+      setBudget('incomes');
       dispatch(filteredDataAction([]));
       return;
     }
