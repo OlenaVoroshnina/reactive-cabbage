@@ -5,6 +5,7 @@ export const BalanceForm = styled.form`
   padding: 0 20px;
   @media screen and (min-width: 768px) {
     display: flex;
+    justify-content: center;
     gap: 20px;
     align-items: baseline;
     margin: 0;
