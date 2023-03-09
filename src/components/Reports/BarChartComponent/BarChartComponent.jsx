@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
-
 import { useSelector } from 'react-redux';
 
 import {
@@ -13,9 +12,10 @@ import {
 } from 'recharts';
 import { BarMain } from './BarChartComponent.styled';
 
-export const BarChartComponent = () => {
+export const BarChartComponent = ({ budget }) => {
   const ref = useRef();
   const filteredData = useSelector(state => state.reportsQuery.filteredDate[0]);
+  const { reports } = useSelector(state => state.reports);
   const [data, setData] = useState([]);
   const [size, setSize] = useState({});
   const [layout, setLayout] = useState('horizontal');
@@ -49,8 +49,17 @@ export const BarChartComponent = () => {
         });
       }
       setData(data);
+    } else if (reports[budget]) {
+      const data = [];
+      for (const item in reports[budget][`${budget}Data`]) {
+        data.push({
+          name: item,
+          pv: reports[budget][`${budget}Data`][item].total,
+        });
+      }
+      setData(data);
     }
-  }, [filteredData]);
+  }, [filteredData, budget, reports]);
   useEffect(() => {
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
