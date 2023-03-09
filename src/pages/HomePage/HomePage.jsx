@@ -10,6 +10,7 @@ import {
   TabListStyled,
   TabStyled,
   NavLinkStyled,
+  BlockHeading
 } from './HomePage.styled';
 
 // import { Tab, Tabs, TabList } from 'react-tabs';
@@ -33,13 +34,13 @@ export const HomePage = () => {
     <>
       {isLoggedIn ? (
         <Background>
-          <div>
-            <Balance />
-            <Link to="/reports" state={{ from: location }}>
-              <span>Reports</span>
-              <ReportsIcon />
-            </Link>
-          </div>
+            <BlockHeading>
+              <Balance />
+              <Link className='reportLink' to="/reports" state={{ from: location }}>
+                <span style={{marginBottom: 2}}>Reports</span>
+                <ReportsIcon />
+              </Link>
+            </BlockHeading>
           <TabsStyled selectedIndex={index} onSelect={() => {}}>
             <TabListStyled>
               <TabStyled>

@@ -4,6 +4,7 @@ import { TransactionsSummary } from 'components/TransactionsSummary/Transactions
 import { useLocation } from 'react-router-dom';
 import { ListTransactions } from './ListTransactions';
 import css from './Transactions.module.css';
+import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
 
 export const Transactions = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ export const Transactions = () => {
         <ListTransactions />
         <TransactionsSummary />
       </div>
+      <BgCabbage />
     </div>
   );
 };
