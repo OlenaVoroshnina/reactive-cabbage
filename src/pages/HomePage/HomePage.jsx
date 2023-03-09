@@ -14,15 +14,10 @@ import {
   NavLinkStyled,
 } from './HomePage.styled';
 
-import BgGrey from 'components/Backgrounds/BgGrey/BgGrey';
-import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
-
-
 export const HomePage = () => {
   const location = useLocation();
 
   return (
-
     <>
       <Background>
         <div>
@@ -47,7 +42,6 @@ export const HomePage = () => {
         </TabsStyled>
       </Background>
     </>
-
   );
 };
 
