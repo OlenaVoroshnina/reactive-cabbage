@@ -31,7 +31,7 @@ export const HomePage = () => {
         <TabPanel>{<Outlet />}</TabPanel>
       </Tabs>
       <BgGrey />
-      <BgCabbage/>
+      <BgCabbage />
     </div>
   );
 };

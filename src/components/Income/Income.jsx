@@ -6,16 +6,15 @@ import { getIncome } from 'redux/transactions/operation';
 import { Transactions } from 'components/Transactions/Transactions';
 
 export const Income = () => {
-  const dispatch = useDispatch();
-  const user = useSelector(selectIsLoggedIn);
-  const balance = useSelector(selectBalance);
-
-  useEffect(() => {
-    if (user) {
-      dispatch(getIncome());
-    }
-  }, [dispatch, user, balance]);
-
+  // return <>jjjf</>;
+  // const dispatch = useDispatch();
+  // const user = useSelector(selectIsLoggedIn);
+  // const balance = useSelector(selectBalance);
+  // useEffect(() => {
+  //   if (user) {
+  //     dispatch(getIncome());
+  //   }
+  // }, [dispatch, user, balance]);
   return (
     <>
       <div>

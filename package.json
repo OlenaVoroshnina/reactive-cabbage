@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://OlenaVoroshnina.github.io/reactive-cabbage/",
   "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
     "@chakra-ui/tabs": "^2.1.8",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
