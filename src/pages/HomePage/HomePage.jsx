@@ -5,6 +5,8 @@ import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
 import Balance from 'components/Balance/Balance';
 import BgGrey from 'components/Backgrounds/BgGrey/BgGrey';
 import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
+import Income from 'components/Income/Income';
+import Expenses from 'components/Expenses/Expenses';
 
 export const HomePage = () => {
   const location = useLocation();

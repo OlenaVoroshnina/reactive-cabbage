@@ -4,10 +4,10 @@ import { LoginPage } from 'pages/LoginPage';
 import { HomePage } from 'pages/HomePage/HomePage';
 
 export const MainPage = () => {
-  const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
   return (
     <div>
-      {isLoggedIn ? <HomePage /> : <LoginPage />}
+      <HomePage />
       <Outlet />
     </div>
   );

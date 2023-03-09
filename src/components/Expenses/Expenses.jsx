@@ -19,7 +19,8 @@ export const Expenses = () => {
   return (
     <>
       <div>
-        <Transactions />
+        fff
+        {/* <Transactions /> */}
         <Outlet />
       </div>
     </>
