@@ -31,7 +31,6 @@
     left: -2px;
     top: 12px;
   }
-
   .datePicker {
     font-weight: 900;
     font-size: 12px;
@@ -46,11 +45,9 @@
     position: relative;
     z-index: 9;
   }
-
   .datePicker:focus {
     outline-color: transparent;
   }
-
   .datePicker::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     z-index: 9;
@@ -195,7 +192,6 @@
     top: 2px;
     cursor: pointer;
   }
-
   .datePicker {
     font-weight: 900;
     font-size: 12px;
@@ -222,7 +218,6 @@
     top: 0;
     cursor: pointer;
   }
-
   .datePicker:focus {
     outline-color: transparent;
   } */

@@ -1,7 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-// import { Tab, Tabs, TabList} from 'react-tabs';
 import { TabPanel } from 'react-tabs';
-// import { NavLink } from 'react-router-dom';
 import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
 import Balance from 'components/Balance/Balance';
 
@@ -14,33 +12,50 @@ import {
   NavLinkStyled,
 } from './HomePage.styled';
 
+// import { Tab, Tabs, TabList } from 'react-tabs';
+// import { NavLink } from 'react-router-dom';
+import { useAuth } from './../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 export const HomePage = () => {
   const location = useLocation();
+  const index = location.pathname === '/income' ? 1 : 0;
+  const { isLoggedIn } = useAuth();
+  const path = location.pathname === '/' ? '/income' : location.pathname;
+  console.log(index);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    navigate(path);
+  }, [navigate, isLoggedIn, path]);
   return (
     <>
-      <Background>
-        <div>
-          <Balance />
-          <Link to="/reports" state={{ from: location }}>
-            <span>Reports</span>
-            <ReportsIcon />
-          </Link>
-        </div>
-
-        <TabsStyled>
-          <TabListStyled>
-            <TabStyled>
-              <NavLinkStyled to="/expenses">Expenses</NavLinkStyled>
-            </TabStyled>
-            <TabStyled>
-              <NavLinkStyled to="/income">Income</NavLinkStyled>
-            </TabStyled>
-          </TabListStyled>
-          <TabPanel>{<Outlet />}</TabPanel>
-          <TabPanel>{<Outlet />}</TabPanel>
-        </TabsStyled>
-      </Background>
+      {isLoggedIn ? (
+        <Background>
+          <div>
+            <Balance />
+            <Link to="/reports" state={{ from: location }}>
+              <span>Reports</span>
+              <ReportsIcon />
+            </Link>
+          </div>
+          <TabsStyled selectedIndex={index} onSelect={() => {}}>
+            <TabListStyled>
+              <TabStyled>
+                <NavLinkStyled to="expenses">Expenses</NavLinkStyled>
+              </TabStyled>
+              <TabStyled>
+                <NavLinkStyled to="income">Income</NavLinkStyled>
+              </TabStyled>
+            </TabListStyled>
+            <TabPanel>{<Outlet />}</TabPanel>
+            <TabPanel>{<Outlet />}</TabPanel>
+          </TabsStyled>
+        </Background>
+      ) : (
+        <Outlet />
+      )}
     </>
   );
 };
