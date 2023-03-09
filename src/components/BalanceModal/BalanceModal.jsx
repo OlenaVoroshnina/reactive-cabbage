@@ -1,6 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import {
   StyledBackdrop,
@@ -13,7 +13,7 @@ const modalRoot = document.querySelector('#modal-root');
 const body = document.querySelector('body');
 
 const BalanceModal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  // const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleModalClose = () => {
     setIsModalOpen(false);

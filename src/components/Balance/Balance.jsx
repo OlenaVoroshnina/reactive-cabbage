@@ -1,14 +1,14 @@
 import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateBalance } from 'redux/transactions/operation';
-import { selectBalance, selectIsLoading } from 'redux/selectors';
+import { selectBalance } from 'redux/selectors';
 import UniversalModal from '../UniversalModal/UniversalModal';
-import BalanceModal from 'components/BalanceModal/BalanceModal';
+// import BalanceModal from 'components/BalanceModal/BalanceModal';
 import { StyledBalanceForm } from 'components/Balance/Balance.styled';
 
 const Balance = () => {
   const transactionBalance = useSelector(selectBalance);
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
 console.log(typeof transactionBalance);
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);

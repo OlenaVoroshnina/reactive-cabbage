@@ -17,7 +17,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshToken } from 'redux/auth/operation';
 import { Navbar } from './Navbar/Navbar';
-import AnimatCursor from 'components/AnimatedCursor/AnimatedCursor';
+// import AnimatCursor from 'components/AnimatedCursor/AnimatedCursor';
 
 export const App = () => {
   const dispatch = useDispatch();
