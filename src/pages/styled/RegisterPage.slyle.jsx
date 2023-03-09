@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-// import BgCabbage from '../../images/imgReports/title_kapusta.png';
 
+export const PasswordIcon = styled.img`
+  display: block;
+  /* width: 100%; */
+`;
 export const Container = styled.div`
   position: relative;
   overflow: hidden;
@@ -74,17 +77,6 @@ export const Title = styled.h1`
 `;
 
 export const FormContainer = styled.div`
-  /* display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-    margin-top: 117px;
-    flex-direction: row;
-    justify-content: flex-end;
-  } */
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -126,16 +118,6 @@ export const Wrap = styled.div`
 `;
 
 export const SubTitle = styled.h3`
-  /* margin: 0 auto 16px auto;
-  letter-spacing: 0.04em;
-  text-align: left;
-
-  @media screen and (min-width: 768px) {
-    width: 250px;
-    margin: 0 0 20px 0;
-    margin-bottom: 30px;
-  } */
-
   display: block;
   height: auto;
   margin: 0;
@@ -151,7 +133,6 @@ export const Form = styled.form`
   width: 100%;
   flex-direction: column;
   display: flex;
-  gap: 20px;
 `;
 
 export const InputWrapper = styled.div`
@@ -164,22 +145,6 @@ export const InputWrapper = styled.div`
 `;
 
 export const Label = styled.label`
-  /* display: flex;
-  justify-content: left;
-  align-items: baseline;
-
-  padding-bottom: 12px;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-
-  color: #000000;
-
-  @media screen and (min-width: 768px) {
-    font-size: 12px;
-    line-height: 1.16;
-  } */
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -194,27 +159,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  /* width: 100%;
-  height: 52px;
-  padding: 17px 19px;
-
-  outline: none;
-  border: none;
-  border-radius: 30px;
-  background-color: #f6f7fb;
-
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.04em;
-  color: #52555f;
-
-  ::placeholder {
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.04em;
-    color: #a6abb9;
-  } */
-
   box-sizing: border-box;
   padding: 17px 18px;
   width: 100%;
@@ -225,17 +169,29 @@ export const Input = styled.input`
   border-radius: 30px;
   border: none;
   color: #000000;
-  margin-bottom: 4px;
+  margin-bottom: 32px;
   &:focus {
     outline: 1px solid #ff751d;
   }
 `;
 
+export const PasswordBtn = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-30px, 15px);
+  border: none;
+  background-color: transparent;
+`;
+
 export const ButtonsWrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: 8px;
+  gap: 8px;
+  @media screen and (min-width: 768px) {
+    gap: 15px;
+  }
 `;
 
 export const NavBtn = styled(NavLink)`
@@ -243,22 +199,19 @@ export const NavBtn = styled(NavLink)`
   justify-content: center;
   align-items: center;
 
-  padding: 12px 0;
-
-  width: 116px;
-  height: 44px;
-
-  vertical-align: middle;
+  padding: 12px 32px;
 
   background-color: #f5f6fb;
   border-radius: 16px;
   border: none;
   outline: none;
+  text-decoration: none;
 
-  font-family: inherit;
-  font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
 
   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
 
@@ -270,14 +223,16 @@ export const NavBtn = styled(NavLink)`
     filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.active {
-    color: #ffffff;
-    background-color: #ff751d;
+    border: 1px solid #ff751d;
+    background-color: transparent;
+    color: #ff751d;
     filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
   }
   :hover:not(.active),
   :focus-visible:not(.active) {
-    color: #ffffff;
-    background-color: #ff751d;
+    border: 1px solid #ff751d;
+    background-color: transparent;
+    color: #ff751d;
     filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
   }
 
@@ -291,26 +246,21 @@ export const SubmitBtn = styled.button`
   justify-content: center;
   align-items: center;
 
-  padding: 12px 0;
+  padding: 12px 32px;
 
-  width: 116px;
-  height: 44px;
-
-  vertical-align: middle;
-
-  background-color: #f5f6fb;
-  border-radius: 16px;
-  border: none;
-  outline: none;
-
-  font-family: inherit;
   font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 16px;
+  outline: none;
 
   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
 
-  color: #ffffff;
   background-color: #ff751d;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -318,14 +268,16 @@ export const SubmitBtn = styled.button`
     filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.active {
-    color: #52555f;
-    background-color: #ff751d;
+    color: #ff751d;
+    border: 1px solid #ff751d;
+    background-color: transparent;
     filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
   }
   :hover:not(.active),
   :focus-visible:not(.active) {
-    color: #52555f;
-    background-color: #ff751d;
+    color: #ff751d;
+    border: 1px solid #ff751d;
+    background-color: transparent;
     filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
   }
 
