@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectIsLoggedIn, selectBalance } from 'redux/selectors';
 import { getExpense } from 'redux/transactions/operation';
 import { Transactions } from 'components/Transactions/Transactions';
+// import { TransactionsSummary } from 'components/TransactionsSummary/TransactionsSummary';
 
 export const Expenses = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export const Expenses = () => {
         <Transactions />
         <Outlet />
       </div>
+      {/* <TransactionsSummary /> */}
     </>
   );
 };
