@@ -13,13 +13,14 @@ import Income from 'components/Income/Income';
 import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import Expenses from 'components/Expenses/Expenses';
-import { ReportPage } from 'pages/ReportPage';
+import { ReportPage } from 'pages/ReportPage/ReportPage';
 import { MainPage } from 'pages/MainPage';
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshToken } from 'redux/auth/operation';
 import { Navbar } from './Navbar/Navbar';
+import AnimatCursor from 'components/AnimatedCursor/AnimatedCursor';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ export const App = () => {
 
   return (
     <div>
+      <AnimatCursor />
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route path="/" element={<MainPage />} />
@@ -73,6 +75,7 @@ export const App = () => {
             }
           ></Route>
         </Route>
+        {/* <Route path="*" element={<Navigate to="/login" />} /> */}
       </Routes>
 
       {/* <Suspense fallback={<Loader />}>

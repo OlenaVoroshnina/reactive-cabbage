@@ -2,6 +2,17 @@ import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
+&::-webkit-scrollbar {
+        width: 10px; 
+    }
+	&::-webkit-scrollbar-thumb {
+        background: linear-gradient(transparent, #FF751D);
+		border-radius: 6px;
+    }
+	&::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(transparent, #000);
+		border-radius: 6px;
+    }
 body{
 	background-color: ${theme.colors.bgWhite};
 	font-family: ${theme.fonts.body};
