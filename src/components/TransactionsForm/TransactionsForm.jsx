@@ -66,6 +66,7 @@ export const TransactionsForm = () => {
           className={css.transactionsDescription}
           value={description}
           onChange={onInputChange}
+          placeholder="Product description"
           required
         />
         <select
@@ -73,9 +74,12 @@ export const TransactionsForm = () => {
           id="category"
           className={css.transactionsCategory}
           onChange={onInputChange}
+          placeholder="Product category"
           required
         >
-          <option value="Transport">Transport</option>
+          <option value="Transport" className={css.transactionsCategoryItem}>
+            Transport
+          </option>
           <option value="Products">Products</option>
           <option value="Health">Health</option>
           <option value="Alcohol">Alcohol</option>
@@ -95,18 +99,19 @@ export const TransactionsForm = () => {
             name="amount"
             className={css.transactionsAmount}
             onChange={onInputChange}
+            placeholder="00.00"
             required
           />
           {/* Добавить свг калькулятор*/}
         </div>
-        <div className={css.transactionsButtonsWrap}>
-          <button type="submit" className={css.transactionsInputBtn}>
-            Input
-          </button>
-          <button type="reset" className={css.transactionsClearBtn}>
-            Clear
-          </button>
-        </div>
+      </div>
+      <div className={css.transactionsButtonsWrap}>
+        <button type="submit" className={css.transactionsInputBtn}>
+          Input
+        </button>
+        <button type="reset" className={css.transactionsClearBtn}>
+          Clear
+        </button>
       </div>
     </form>
   );
