@@ -1,38 +1,59 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { addExpense } from 'redux/transactions/operation';
+import { useDispatch } from 'react-redux';
+import { addExpense } from 'redux/transactions/operation';
 import SelectDataPicker from 'components/DatePicker/DatePicker';
-import css from './TransactionsForm.module.css';
 import { format } from 'date-fns';
+import { translateToRus } from 'hooks/useCategory';
+import css from './TransactionsForm.module.css';
 
 export const TransactionsForm = () => {
-  const [formData, setFormData] = useState({});
-  // const dispatch = useDispatch();
-  const newDate = format(new Date(2014, 1, 11), 'yyyy-MM-dd');
+  const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('Transport');
+  const [amount, setAmount] = useState(0);
+  const dispatch = useDispatch();
 
   const onInputChange = event => {
     let { name, value } = event.currentTarget;
-    if (name === 'amount') {
-      value = Number(value);
+    switch (name) {
+      case 'date':
+        setDate(value);
+        break;
+      case 'description':
+        setDescription(value);
+        break;
+      case 'amount':
+        setAmount(Number(value));
+        break;
+      case 'category':
+        setCategory(value);
+        break;
+      default:
+        break;
     }
-    setFormData(prevState => ({
-      ...prevState,
-      category: 'transport',
-      date: newDate,
-      [name]: value,
-    }));
   };
 
   const onFormSubmit = event => {
     event.preventDefault();
-    console.log(formData);
-    // dispatch(addExpense(formData)); ошибка при попытке отправить данные на бекенд
+    const formData = {
+      date,
+      description,
+      category: translateToRus(category),
+      amount,
+    };
+    dispatch(addExpense(formData));
+    reset();
+  };
+
+  const reset = () => {
+    setDate(format(new Date(), 'yyyy-MM-dd'));
+    setDescription('');
+    setCategory('Transport');
+    setAmount(0);
   };
 
   const getDate = newDate => {
-    setFormData({
-      date: newDate,
-    });
+    setDate(format(newDate, 'yyyy-MM-dd'));
   };
 
   return (
@@ -42,6 +63,7 @@ export const TransactionsForm = () => {
         type="text"
         name="description"
         className={css.transactionsInputProduct}
+        value={description}
         onChange={onInputChange}
         required
       />
@@ -52,17 +74,17 @@ export const TransactionsForm = () => {
         onChange={onInputChange}
         required
       >
-        <option value="transport">Transport</option>
-        <option value="products">Products</option>
-        <option value="health">Health</option>
-        <option value="alcohol">Alcohol</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="housing">Housing</option>
-        <option value="technique">Technique</option>
-        <option value="communal/communication">Communal, communication</option>
-        <option value="sports/hobbies">Sports, hobbies</option>
-        <option value="education">Education</option>
-        <option value="other">Other</option>
+        <option value="Transport">Transport</option>
+        <option value="Products">Products</option>
+        <option value="Health">Health</option>
+        <option value="Alcohol">Alcohol</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Housing">Housing</option>
+        <option value="Technique">Technique</option>
+        <option value="Communal, communication">Communal, communication</option>
+        <option value="Sports, hobbies">Sports, hobbies</option>
+        <option value="Education">Education</option>
+        <option value="Other">Other</option>
       </select>
       <input
         type="number"
