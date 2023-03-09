@@ -58,47 +58,56 @@ export const TransactionsForm = () => {
 
   return (
     <form className={css.transactionsForm} onSubmit={onFormSubmit}>
-      <SelectDataPicker getDate={getDate} />
-      <input
-        type="text"
-        name="description"
-        className={css.transactionsInputProduct}
-        value={description}
-        onChange={onInputChange}
-        required
-      />
-      <select
-        name="category"
-        id="category"
-        className={css.transactionsProductType}
-        onChange={onInputChange}
-        required
-      >
-        <option value="Transport">Transport</option>
-        <option value="Products">Products</option>
-        <option value="Health">Health</option>
-        <option value="Alcohol">Alcohol</option>
-        <option value="Entertainment">Entertainment</option>
-        <option value="Housing">Housing</option>
-        <option value="Technique">Technique</option>
-        <option value="Communal, communication">Communal, communication</option>
-        <option value="Sports, hobbies">Sports, hobbies</option>
-        <option value="Education">Education</option>
-        <option value="Other">Other</option>
-      </select>
-      <input
-        type="number"
-        name="amount"
-        className={css.transactionsInputAmount}
-        onChange={onInputChange}
-        required
-      />
-      <button type="submit" className={css.transactionsSubmitBtn}>
-        Input
-      </button>
-      <button type="reset" className={css.transactionsResetBtn}>
-        Clear
-      </button>
+      <div className={css.transactionsInputsWrap}>
+        <SelectDataPicker getDate={getDate} />
+        <input
+          type="text"
+          name="description"
+          className={css.transactionsDescription}
+          value={description}
+          onChange={onInputChange}
+          required
+        />
+        <select
+          name="category"
+          id="category"
+          className={css.transactionsCategory}
+          onChange={onInputChange}
+          required
+        >
+          <option value="Transport">Transport</option>
+          <option value="Products">Products</option>
+          <option value="Health">Health</option>
+          <option value="Alcohol">Alcohol</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Housing">Housing</option>
+          <option value="Technique">Technique</option>
+          <option value="Communal, communication">
+            Communal, communication
+          </option>
+          <option value="Sports, hobbies">Sports, hobbies</option>
+          <option value="Education">Education</option>
+          <option value="Other">Other</option>
+        </select>
+        <div className={css.transactionsAmountWrapper}>
+          <input
+            type="number"
+            name="amount"
+            className={css.transactionsAmount}
+            onChange={onInputChange}
+            required
+          />
+          {/* Добавить свг калькулятор*/}
+        </div>
+        <div className={css.transactionsButtonsWrap}>
+          <button type="submit" className={css.transactionsInputBtn}>
+            Input
+          </button>
+          <button type="reset" className={css.transactionsClearBtn}>
+            Clear
+          </button>
+        </div>
+      </div>
     </form>
   );
 };
