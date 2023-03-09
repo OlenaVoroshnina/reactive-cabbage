@@ -5,6 +5,18 @@ import { useState, useEffect } from 'react';
 import UniversalModal from 'components/UniversalModal/UniversalModal';
 import { getAllUserInfo } from 'redux/auth/operation';
 
+import {
+  ItemName,
+  ItemNameCont,
+  ItemDate,
+  ItemDateCont,
+  ItemStyled,
+  ItemCategory,
+  Sum,
+  SumCont,
+  StyledList,
+} from 'components/Transactions/ListTransactions.styled';
+
 export const ListTransactions = () => {
   const allTransactions = useSelector(state => state.auth.transactions);
 
@@ -39,7 +51,7 @@ export const ListTransactions = () => {
   };
 
   return (
-    <ul>
+    <StyledList>
       {sortedTransactions.slice(0, 7).map(item => {
         const { _id, description, amount, date, category } = item;
         let color;
@@ -52,18 +64,18 @@ export const ListTransactions = () => {
         }
 
         return (
-          <li key={_id}>
-            <div>
-              <p>{description}</p>
-              <div>
-                <p>{date}</p>
-                <p>{category}</p>
-              </div>
-            </div>
-            <div>
-              <p style={{ color }} className="sum">
+          <ItemStyled key={_id}>
+            <ItemNameCont>
+              <ItemName>{description}</ItemName>
+              <ItemDateCont>
+                <ItemDate>{date}</ItemDate>
+                <ItemCategory>{category}</ItemCategory>
+              </ItemDateCont>
+            </ItemNameCont>
+            <SumCont>
+              <Sum style={{ color }} className="sum">
                 {minus} {amount.toFixed(2)}
-              </p>
+              </Sum>
               <span
                 id={_id}
                 onClick={() => handleModalOpen(_id)}
@@ -71,8 +83,8 @@ export const ListTransactions = () => {
               >
                 <DeleteIcon />
               </span>
-            </div>
-          </li>
+            </SumCont>
+          </ItemStyled>
         );
       })}
       {modalOpen && (
@@ -84,6 +96,6 @@ export const ListTransactions = () => {
           Are you sure?
         </UniversalModal>
       )}
-    </ul>
+    </StyledList>
   );
 };
