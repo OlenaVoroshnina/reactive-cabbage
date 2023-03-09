@@ -1,3 +1,5 @@
+import { StyledMainBtn } from 'components/Buttons/Buttons.styled';
+
 export const MainButton = ({
   children,
   dispatch,
@@ -19,7 +21,7 @@ export const MainButton = ({
     }
   };
 
-  return <button onClick={handleClick}>{children}</button>;
+  return <StyledMainBtn onClick={handleClick}>{children}</StyledMainBtn>;
 };
 
 export default MainButton;
