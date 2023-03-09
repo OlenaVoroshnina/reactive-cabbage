@@ -5,6 +5,7 @@ export const ButtonBack = styled(Link)`
   background-color: transparent;
   border: transparent;
   padding: 0%;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
@@ -42,6 +43,7 @@ export const ButtonConfirm = styled.button`
 `;
 export const ButtonBackText = styled.span`
   color: rgba(82, 85, 95, 0.7);
+  font-size: 12px;
   /* @media screen and (min-width: 768px) { */
   @media screen and (min-width: 320px) {
     display: none;

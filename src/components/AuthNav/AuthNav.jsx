@@ -5,7 +5,7 @@ import logoutImg from 'images/logout.svg';
 import logoImg from 'images/logo.svg';
 import { selectUserEmail } from 'redux/selectors';
 // import { selectIsLoggedIn } from 'redux/selectors';
-// import UniversalModal from 'components/UniversalModal/UniversalModal';
+import UniversalModal from 'components/UniversalModal/UniversalModal';
 import { logOut } from 'redux/auth/operation';
 
 import {
@@ -51,9 +51,21 @@ export const AuthNav = () => {
         </ExitButton>
       </AuthNavContainer>
       {modalOpen && (
-        <p closeModal={handleModalClose} dispatch={handleClick}>
-          Do you really want to leave?
-        </p>
+        // <p closeModal={handleModalClose} dispatch={handleClick}>
+        //   Do you really want to leave?
+        // </p>
+        <UniversalModal
+          changeBalance="true"
+          closeModal={handleModalClose}
+          dispatch={handleClick}
+          text="SURE"
+          // balance={transactionBalance}
+          onDelete={()=>{}}
+        >
+          Are you sure?
+        </UniversalModal>
+
+
         // <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
         //   Do you really want to leave?
         // </UniversalModal>
