@@ -19,7 +19,7 @@ export const Income = () => {
   return (
     <>
       <div>
-        fff
+       
         <Transactions />
         <Outlet />
       </div>
