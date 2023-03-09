@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { selectBalance } from 'redux/selectors';
 import { useMatchMedia } from 'hooks/useMatchMedia';
-import { routes } from 'helpers/routers';
+import { routes } from '../../../helpers/routers';
 import {
   BalanceText,
   BalanceAmount,
@@ -18,18 +18,13 @@ import reports from '../../../images/imgReports/reports.svg';
 
 export const ReportsNav = () => {
   const location = useLocation();
-  // const navigate = useNavigate();
-  // const from = location.state?.from || '/';
-  // const backLink = () => navigate(from);
+
   const transactionBalance = useSelector(selectBalance);
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
   return (
     <PreBox>
-      <ButtonBack 
-      // to={backLink}
-      to={location.state?.from ?? routes.EXPENSES}
-      >
+      <ButtonBack to={location.state?.from ?? routes.EXPENSES}>
         <svg width="24" height="24">
           <use href={`${reports}#icon-back`}></use>
         </svg>
