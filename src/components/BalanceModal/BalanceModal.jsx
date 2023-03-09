@@ -2,6 +2,13 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { useState, useEffect } from 'react';
 
+import {
+  StyledBackdrop,
+  StyledModal,
+  StyledText,
+  StyledTitle,
+} from 'components/BalanceModal/BalanceModal.styled';
+
 const modalRoot = document.querySelector('#modal-root');
 const body = document.querySelector('body');
 
@@ -26,14 +33,14 @@ const BalanceModal = () => {
 
   return createPortal(
     isModalOpen && (
-      <div onClick={handleBackdropClick}>
-        <div>
-          <p>
+      <StyledBackdrop onClick={handleBackdropClick}>
+        <StyledModal>
+          <StyledTitle>
             Hello! To get started, enter the current balance of your account!
-          </p>
-          <p>You can't spend money until you have it :)</p>
-        </div>
-      </div>
+          </StyledTitle>
+          <StyledText>You can't spend money until you have it :)</StyledText>
+        </StyledModal>
+      </StyledBackdrop>
     ),
     modalRoot
   );

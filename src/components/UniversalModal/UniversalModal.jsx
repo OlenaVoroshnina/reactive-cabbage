@@ -5,6 +5,15 @@ import { useEffect } from 'react';
 import MainBtn from 'components/Buttons/MainBtn';
 import SecondaryBtn from 'components/Buttons/SecondaryBtn';
 
+import {
+  StyledModal,
+  StyledContent,
+  StyledText,
+  StyledWrap,
+  StyledClose,
+  StyledBackdrop,
+} from 'components/UniversalModal/UniversalModal.styled';
+
 const modalRoot = document.querySelector('#modal-root');
 const body = document.querySelector('body');
 
@@ -38,14 +47,14 @@ const UniversalModal = ({
   });
 
   return createPortal(
-    <div onClick={handleBackdropClose}>
-      <div>
-        <button onClick={closeModal}>
+    <StyledBackdrop onClick={handleBackdropClose}>
+      <StyledModal>
+        <StyledClose onClick={closeModal}>
           <img src={closeIcon} alt="close" />
-        </button>
-        <div>
-          <p>{children}</p>
-          <div>
+        </StyledClose>
+        <StyledContent>
+          <StyledText>{children}</StyledText>
+          <StyledWrap>
             <MainBtn
               dispatch={dispatch}
               closeModal={closeModal}
@@ -55,10 +64,10 @@ const UniversalModal = ({
               {text ? text : 'YES'}
             </MainBtn>
             <SecondaryBtn closeModal={closeModal}>NO</SecondaryBtn>
-          </div>
-        </div>
-      </div>
-    </div>,
+          </StyledWrap>
+        </StyledContent>
+      </StyledModal>
+    </StyledBackdrop>,
     modalRoot
   );
 };

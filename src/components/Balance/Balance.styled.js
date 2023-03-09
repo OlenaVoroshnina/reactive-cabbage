@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const BalanceForm = styled.form`
+
+export const StyledBalanceForm = styled.form`
+
   margin: 0 auto 50px;
   padding: 0 20px;
   @media screen and (min-width: 768px) {
@@ -81,4 +83,6 @@ export const BalanceForm = styled.form`
       border-left: 2px solid white;
     }
   }
+
 `;
+

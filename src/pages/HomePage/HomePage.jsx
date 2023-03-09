@@ -1,38 +1,47 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { NavLink } from 'react-router-dom';
+// import { Tab, Tabs, TabList} from 'react-tabs';
+import { TabPanel } from 'react-tabs';
+// import { NavLink } from 'react-router-dom';
 import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
 import Balance from 'components/Balance/Balance';
-import BgGrey from 'components/Backgrounds/BgGrey/BgGrey';
-import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
+
+import { Background } from './HomePage.styled';
+
+import {
+  TabsStyled,
+  TabListStyled,
+  TabStyled,
+  NavLinkStyled,
+} from './HomePage.styled';
 
 export const HomePage = () => {
   const location = useLocation();
 
   return (
-    <div style={{ position: 'relative' }}>
-      <div>
-        <Balance />
-        <Link to="/reports" state={{ from: location }}>
-          <span>Reports</span>
-          <ReportsIcon />
-        </Link>
-      </div>
-      <Tabs>
-        <TabList>
-          <Tab>
-            <NavLink to="expenses">Expenses</NavLink>
-          </Tab>
-          <Tab>
-            <NavLink to="income">Income</NavLink>
-          </Tab>
-        </TabList>
-        <TabPanel>{<Outlet />}</TabPanel>
-        <TabPanel>{<Outlet />}</TabPanel>
-      </Tabs>
-      <BgGrey />
-      <BgCabbage/>
-    </div>
+    <>
+      <Background>
+        <div>
+          <Balance />
+          <Link to="/reports" state={{ from: location }}>
+            <span>Reports</span>
+            <ReportsIcon />
+          </Link>
+        </div>
+
+        <TabsStyled>
+          <TabListStyled>
+            <TabStyled>
+              <NavLinkStyled to="expenses">Expenses</NavLinkStyled>
+            </TabStyled>
+            <TabStyled>
+              <NavLinkStyled to="income">Income</NavLinkStyled>
+            </TabStyled>
+          </TabListStyled>
+          <TabPanel>{<Outlet />}</TabPanel>
+          <TabPanel>{<Outlet />}</TabPanel>
+        </TabsStyled>
+      </Background>
+    </>
   );
 };
 
