@@ -7,28 +7,49 @@ import Balance from 'components/Balance/Balance';
 
 import { Background } from './HomePage.styled';
 
-import {
-  TabsStyled,
-  TabListStyled,
-  TabStyled,
-  NavLinkStyled,
-} from './HomePage.styled';
+// import {
+//   TabsStyled,
+//   TabListStyled,
+//   TabStyled,
+//   NavLinkStyled,
+// } from './HomePage.styled';
+
+import { Tab, Tabs, TabList } from 'react-tabs';
+import { NavLink } from 'react-router-dom';
+import { useAuth } from './../../hooks/useAuth';
+import { LoginPage } from 'pages/LoginPage';
 
 export const HomePage = () => {
   const location = useLocation();
+  const index = location.pathname === '/income' ? 1 : 0;
+  const { isLoggedIn } = useAuth();
 
   return (
     <>
-      <Background>
-        <div>
-          <Balance />
-          <Link to="/reports" state={{ from: location }}>
-            <span>Reports</span>
-            <ReportsIcon />
-          </Link>
-        </div>
+      {isLoggedIn ? (
+        <Background>
+          <div>
+            <Balance />
+            <Link to="/reports" state={{ from: location }}>
+              <span>Reports</span>
+              <ReportsIcon />
+            </Link>
+          </div>
 
-        <TabsStyled>
+          <Tabs selectedIndex={index} onSelect={() => {}}>
+            <TabList>
+              <Tab>
+                <NavLink to="expenses">Expenses</NavLink>
+              </Tab>
+              <Tab>
+                <NavLink to="income">Income</NavLink>
+              </Tab>
+            </TabList>
+            <TabPanel>{<Outlet />}</TabPanel>
+            <TabPanel>{<Outlet />}</TabPanel>
+          </Tabs>
+
+          {/* <TabsStyled>
           <TabListStyled>
             <TabStyled>
               <NavLinkStyled to="expenses">Expenses</NavLinkStyled>
@@ -39,8 +60,11 @@ export const HomePage = () => {
           </TabListStyled>
           <TabPanel>{<Outlet />}</TabPanel>
           <TabPanel>{<Outlet />}</TabPanel>
-        </TabsStyled>
-      </Background>
+        </TabsStyled> */}
+        </Background>
+      ) : (
+        <LoginPage />
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { PrivateRoute } from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
@@ -11,7 +11,7 @@ import { RegisterPage } from 'pages/RegisterPage';
 import { LoginPage } from 'pages/LoginPage';
 import Expenses from 'components/Expenses/Expenses';
 import { ReportPage } from 'pages/ReportPage/ReportPage';
-import { MainPage } from 'pages/MainPage';
+// import { MainPage } from 'pages/MainPage';
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -29,9 +29,52 @@ export const App = () => {
   return (
     <div>
       <AnimatCursor />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<HomePage />}>
           <Route
+            path="/expenses"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Expenses />} />
+            }
+          />
+          <Route
+            path="/income"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Income />} />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/expenses"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                redirectTo="/expenses"
+                component={<RegisterPage />}
+              />
+            }
+          />
+        </Route>
+        <Route
+          // path="/transaction/period-data"
+          path="/reports"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ReportPage />} />
+          }
+        />
+
+        <Route path="*" element={<Navigate to="/" replace={true} />} />
+        {/* <Route path="/" element={<Navbar />}></Route> */}
+
+        {/* <Route
             path="/"
             element={
               <PrivateRoute redirectTo="/login" component={<MainPage />} />
@@ -58,9 +101,8 @@ export const App = () => {
               <PrivateRoute redirectTo="/login" component={<HomePage />} />
             }
           >
-            <Route path="income" element={<Income />}></Route>
-            <Route path="expenses" element={<Expenses />}></Route>
-            {/* <Route
+           
+            <Route
               path="income"
               element={
                 <PrivateRoute redirectTo="/login" component={<Income />} />
@@ -71,7 +113,7 @@ export const App = () => {
               element={
                 <PrivateRoute redirectTo="/login" component={<Expenses />} />
               }
-            ></Route> */}
+            ></Route>
           </Route>
 
           <Route
@@ -80,7 +122,7 @@ export const App = () => {
               <PrivateRoute redirectTo="/login" component={<ReportPage />} />
             }
           ></Route>
-        </Route>
+        </Route> */}
       </Routes>
     </div>
   );
