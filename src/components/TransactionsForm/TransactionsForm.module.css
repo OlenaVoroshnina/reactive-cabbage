@@ -21,17 +21,16 @@
     border-bottom-left-radius: 30%;
   }
 
-  /* .dateWrapper {
+  .dateWrapper {
     position: relative;
   }
 
-  .calendarIcon {
+  /* .calendarIcon {
     position: absolute;
     z-index: 2;
     left: -2px;
     top: 12px;
   }
-
   .datePicker {
     font-weight: 900;
     font-size: 12px;
@@ -46,11 +45,9 @@
     position: relative;
     z-index: 9;
   }
-
   .datePicker:focus {
     outline-color: transparent;
   }
-
   .datePicker::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     z-index: 9;
@@ -70,9 +67,10 @@
     font-size: 12px;
     line-height: 14px;
     text-align: start;
-    background-color: transparent;
+    background-color: #f5f6fb;
     padding-left: 30px;
     border: 2px solid #ffffff;
+    border-bottom: none;
     color: #52555f;
   }
 
@@ -84,9 +82,17 @@
   .transactionsCategory {
     width: 280px;
     height: 44px;
+    font-size: 12px;
+    padding-left: 25px;
     border: 2px solid #ffffff;
     border-bottom-right-radius: 16px;
+    background-color: #f5f6fb;
     color: #c7ccdc;
+  }
+
+  .transactionsCategoryItem {
+    margin: 0;
+    padding: 0;
   }
 
   .transactionsAmountWrapper {
@@ -112,12 +118,12 @@
     line-height: 14px;
     text-align: center;
     margin-top: 32px;
-    background-color: transparent;
+    background-color: #f5f6fb;
     color: #52555f;
   }
 
   .transactionsAmount::placeholder {
-    color: #000;
+    color: #c7ccdc;
   }
 
   .transactionsButtonsWrap {
@@ -168,7 +174,6 @@
     width: 100%;
     margin: 0 auto;
     width: 624px;
-    height: 44px;
   }
 
   .transactionsInputsWrap {
@@ -176,18 +181,17 @@
     align-items: center;
   }
 
-  /* .dateWrapper {
+  .dateWrapper {
     position: relative;
   }
 
-  .calendarIcon {
+  /* .calendarIcon {
     position: absolute;
     z-index: 2;
     left: -5px;
     top: 2px;
     cursor: pointer;
   }
-
   .datePicker {
     font-weight: 900;
     font-size: 12px;
@@ -201,9 +205,9 @@
     text-align: end;
     position: relative;
     z-index: 9;
-  }
+  } */
 
-    /* .datePicker::-webkit-calendar-picker-indicator {
+  /* .datePicker::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     z-index: 9;
     width: 90px;
@@ -214,7 +218,6 @@
     top: 0;
     cursor: pointer;
   }
-
   .datePicker:focus {
     outline-color: transparent;
   } */
@@ -239,6 +242,9 @@
     width: 184px;
     height: 44px;
     margin-bottom: 0;
+    padding-left: 16px;
+    font-size: 12px;
+    color: #c7ccdc;
     border: 2px solid #f5f6fb;
   }
 
@@ -261,12 +267,16 @@
     border: 2px solid #f5f6fb;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
-    font-weight: 900;
+    font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     text-align: center;
-    background-color: transparent;
-    color: #52555f;
+    background-color: #ffffff;
+    color: #c7ccdc;
+  }
+
+  .transactionsAmount::placeholder {
+    color: #c7ccdc;
   }
 
   .transactionsInputBtn {
@@ -365,10 +375,4 @@
     margin-left: 32px;
     margin-top: 0;
   }
-
-  /* .inputWrap {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-  } */
 }

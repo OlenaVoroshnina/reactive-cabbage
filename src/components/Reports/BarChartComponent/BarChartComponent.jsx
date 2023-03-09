@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 
-
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import {
   BarChart,
@@ -16,51 +15,16 @@ import { BarMain } from './BarChartComponent.styled';
 
 export const BarChartComponent = () => {
   const ref = useRef();
+  const filteredData = useSelector(state => state.reportsQuery.filteredDate[0]);
+  const [data, setData] = useState([]);
   const [size, setSize] = useState({});
-  const [xParams, setXParams] = useState({
-    type: 'category',
-    dataKey: 'name',
-    hide: false,
-  });
-  const [yParams, setYParams] = useState({
-    type: 'number',
-    dataKey: '',
-  });
   const [layout, setLayout] = useState('horizontal');
-  const data = [
-    {
-      name: 'Page A',
-      pv: 2400,
-    },
-    {
-      name: 'Page B',
-      pv: 1398,
-    },
-    {
-      name: 'Page C',
-      pv: 80,
-    },
-    {
-      name: 'Page D',
-      pv: 3908,
-    },
-    {
-      name: 'Page E',
-      pv: 4800,
-    },
-    {
-      name: 'Page F',
-      pv: 3800,
-    },
-    {
-      name: 'Page G',
-      pv: 4300,
-    },
-  ];
+  const [xParams, setXParams] = useState({});
+  const [yParams, setYParams] = useState({});
+
   const resizeHandler = () => {
     const { clientHeight, clientWidth } = ref.current || {};
     setSize({ clientHeight, clientWidth });
-
     const viewportWidth = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth || 0
@@ -76,9 +40,20 @@ export const BarChartComponent = () => {
     }
   };
   useEffect(() => {
+    if (filteredData) {
+      const data = [];
+      for (const item in filteredData[1]) {
+        data.push({
+          name: item,
+          pv: filteredData[1][item],
+        });
+      }
+      setData(data);
+    }
+  }, [filteredData]);
+  useEffect(() => {
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
-
     return () => {
       window.removeEventListener('resize', resizeHandler);
     };
@@ -99,6 +74,7 @@ export const BarChartComponent = () => {
   return (
     <BarMain ref={ref}>
       <BarChart
+        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
         layout={layout}
         width={size.clientWidth}
         height={size.clientHeight}
@@ -116,7 +92,6 @@ export const BarChartComponent = () => {
           dataKey={yParams.dataKey}
           stroke="#8884d8"
         />
-        {/* <Tooltip wrapperStyle={{ width: 100, backgroundColor: '#ccc' }} /> */}
         <CartesianGrid stroke="#ccc" vertical={false} strokeDasharray="0 0" />
         <Bar dataKey="pv" fill="#FF751D" barSize={40}>
           <LabelList content={renderCustomBarLabel} position="top" />

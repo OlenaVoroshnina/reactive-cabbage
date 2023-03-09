@@ -1,15 +1,15 @@
 import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateBalance } from 'redux/transactions/operation';
-import { selectBalance, selectIsLoading } from 'redux/selectors';
+import { selectBalance } from 'redux/selectors';
 import UniversalModal from '../UniversalModal/UniversalModal';
-import BalanceModal from 'components/BalanceModal/BalanceModal';
+// import BalanceModal from 'components/BalanceModal/BalanceModal';
 import { StyledBalanceForm } from 'components/Balance/Balance.styled';
 
 const Balance = () => {
   const transactionBalance = useSelector(selectBalance);
-  const isLoading = useSelector(selectIsLoading);
-
+  // const isLoading = useSelector(selectIsLoading);
+  console.log(typeof transactionBalance);
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const form = useRef();
@@ -49,7 +49,7 @@ const Balance = () => {
           name="balance"
           title="Please, enter your balance"
           pattern="[0-9, .UAH]*"
-          placeholder={`${transactionBalance.toFixed(2)} UAH`}
+          placeholder={`${Number(transactionBalance).toFixed(2)} UAH`}
           required
         />
         <button type="submit" className="btn" onClick={handleModalOpen}>
@@ -57,7 +57,7 @@ const Balance = () => {
         </button>
       </StyledBalanceForm>
 
-      {isLoading === true && !transactionBalance && <BalanceModal />}
+      {/* <BalanceModal /> */}
       {modalOpen && (
         <UniversalModal
           changeBalance="true"
@@ -65,6 +65,7 @@ const Balance = () => {
           dispatch={handleClick}
           text="SURE"
           balance={transactionBalance}
+          onDelete={() => {}}
         >
           Are you sure?
         </UniversalModal>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   StyledBackdrop,
@@ -32,16 +32,14 @@ const BalanceModal = () => {
   }, []);
 
   return createPortal(
-    isModalOpen && (
-      <StyledBackdrop onClick={handleBackdropClick}>
-        <StyledModal>
-          <StyledTitle>
-            Hello! To get started, enter the current balance of your account!
-          </StyledTitle>
-          <StyledText>You can't spend money until you have it :)</StyledText>
-        </StyledModal>
-      </StyledBackdrop>
-    ),
+    <StyledBackdrop onClick={handleBackdropClick}>
+      <StyledModal>
+        <StyledTitle>
+          Hello! To get started, enter the current balance of your account!
+        </StyledTitle>
+        <StyledText>You can't spend money until you have it :)</StyledText>
+      </StyledModal>
+    </StyledBackdrop>,
     modalRoot
   );
 };
