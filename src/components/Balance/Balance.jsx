@@ -4,6 +4,7 @@ import { updateBalance } from 'redux/transactions/operation';
 import { selectBalance, selectIsLoading } from 'redux/selectors';
 import UniversalModal from '../UniversalModal/UniversalModal';
 import BalanceModal from 'components/BalanceModal/BalanceModal';
+import { BalanceForm } from './Balance.styled';
 
 import { StyledBalanceForm } from 'components/Balance/Balance.styled';
 
@@ -41,7 +42,9 @@ const Balance = () => {
 
   return (
     <>
+
       <StyledBalanceForm onSubmit={handleSubmit} ref={form}>
+
         <h2 className="title">Balance:</h2>
         <input
           onChange={handleChange}
@@ -56,7 +59,9 @@ const Balance = () => {
         <button type="submit" className="btn" onClick={handleModalOpen}>
           Confirm
         </button>
+
       </StyledBalanceForm>
+
 
       {isLoading === true && !transactionBalance && <BalanceModal />}
       {modalOpen && (

@@ -1,7 +1,7 @@
 import { StyledBgGrey } from './BgGrey.styled';
 
-const BgGrey = () => {
-  return <StyledBgGrey />;
-};
+const BgGrey = () => (
+	<StyledBgGrey/>
+	);
 
 export default BgGrey;

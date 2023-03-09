@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {register, logIn, logOut, getAllUserInfo, refreshToken} from 'redux/auth/operation';
+import {
+  register,
+  logIn,
+  logOut,
+  getAllUserInfo,
+  refreshToken,
+} from 'redux/auth/operation';
 
 const initialState = {
   accessToken: '',
@@ -38,6 +44,11 @@ const authSlice = createSlice({
       .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
         state.userId = action.payload.id;
+        // state.accessToken = action.payload.accessToken;
+        // state.refreshToken = action.payload.refreshToken;
+        // state.sid = action.payload.sid;
+        // state.userEmail = action.payload.userData.email;
+        // state.isLoggedIn = true;
       })
       .addCase(register.rejected, handleRejected)
 

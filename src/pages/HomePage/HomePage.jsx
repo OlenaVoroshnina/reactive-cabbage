@@ -4,6 +4,7 @@ import { TabPanel } from 'react-tabs';
 // import { NavLink } from 'react-router-dom';
 import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
 import Balance from 'components/Balance/Balance';
+
 import { Background } from './HomePage.styled';
 
 import {
@@ -13,10 +14,15 @@ import {
   NavLinkStyled,
 } from './HomePage.styled';
 
+import BgGrey from 'components/Backgrounds/BgGrey/BgGrey';
+import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
+
+
 export const HomePage = () => {
   const location = useLocation();
 
   return (
+
     <>
       <Background>
         <div>
@@ -41,6 +47,7 @@ export const HomePage = () => {
         </TabsStyled>
       </Background>
     </>
+
   );
 };
 
