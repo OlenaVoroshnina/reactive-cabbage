@@ -7,6 +7,7 @@ export const StyledBalanceForm = styled.form`
   padding: 0 20px;
   @media screen and (min-width: 768px) {
     display: flex;
+    justify-content: center;
     gap: 20px;
     align-items: baseline;
     margin: 0;
@@ -25,12 +26,13 @@ export const StyledBalanceForm = styled.form`
   .inputTag {
     font-weight: 700;
     width: 140px;
-    padding: 12px 0px;
+    padding: 22px 0px;
     color: #52555f;
     text-align: center;
     border: 2px solid white;
     border-radius: 22px 0 0 22px;
     outline: none;
+    background-color: #F2F5FC;
     ::-webkit-outer-spin-button,
     ::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -57,6 +59,7 @@ export const StyledBalanceForm = styled.form`
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
+    background-color: #F2F5FC;
     width: 140px;
     padding: 12px 18px;
     color: rgba(82, 85, 95, 0.7);

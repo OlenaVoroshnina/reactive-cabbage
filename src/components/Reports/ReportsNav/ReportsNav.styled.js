@@ -66,7 +66,7 @@ export const Box = styled.div`
     display: flex;
     flex-direction: row-reverse;
     width: calc((100% / 3) * 2);
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 `;
@@ -76,6 +76,7 @@ export const BalanceBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
@@ -114,6 +115,7 @@ export const BalanceAmount = styled.p`
   text-align: center;
   ${'' /* letter-spacing: 0.02em; */}
   text-transform: uppercase;
+  background-color: #F2F5FC;
   color: #000000;
   width: 183px;
   margin-bottom: 32px;
