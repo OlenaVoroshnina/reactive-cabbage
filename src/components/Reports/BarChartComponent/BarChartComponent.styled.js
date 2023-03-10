@@ -10,7 +10,7 @@ export const BarMain = styled.div`
   border-radius: 30px;
   background-color: #fff;
   box-sizing: revert;
-  
+
   @media screen and (min-width: 768px) {
     width: 80vw;
     height: 50vh;
