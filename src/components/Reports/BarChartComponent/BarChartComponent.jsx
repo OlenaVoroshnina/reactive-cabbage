@@ -9,6 +9,8 @@ import {
   CartesianGrid,
   LabelList,
   YAxis,
+  Rectangle,
+  Cell,
 } from 'recharts';
 import { BarMain } from './BarChartComponent.styled';
 
@@ -18,9 +20,9 @@ export const BarChartComponent = ({ budget }) => {
   const { reports } = useSelector(state => state.reports);
   const [data, setData] = useState([]);
   const [size, setSize] = useState({});
-  const [layout, setLayout] = useState('horizontal');
   const [xParams, setXParams] = useState({});
   const [yParams, setYParams] = useState({});
+  const [option, setOption] = useState({ layout: 'vertical' });
 
   const resizeHandler = () => {
     const { clientHeight, clientWidth } = ref.current || {};
@@ -31,12 +33,24 @@ export const BarChartComponent = ({ budget }) => {
     );
     if (viewportWidth <= 768) {
       setXParams({ type: 'number', dataKey: '', hide: true });
-      setYParams({ type: 'category', dataKey: 'name', hide: false });
-      setLayout('vertical');
+      setYParams({ type: 'category', dataKey: 'name', hide: true });
+
+      setOption({
+        layout: 'vertical',
+        textAnchor: 'start',
+        shapeRadius: [0, 10, 10, 0],
+        strokeVertical: false,
+      });
     } else {
       setXParams({ type: 'category', dataKey: 'name', hide: false });
       setYParams({ type: 'number', dataKey: '', hide: true });
-      setLayout('horizontal');
+
+      setOption({
+        layout: 'horizontal',
+        textAnchor: 'middle',
+        shapeRadius: [10, 10, 0, 0],
+        strokeHorizontal: true,
+      });
     }
   };
   useEffect(() => {
@@ -68,42 +82,71 @@ export const BarChartComponent = ({ budget }) => {
     };
   }, []);
 
-  const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
+  const renderCustomBarLabel = ({
+    name,
+    payload,
+    x,
+    y,
+    width,
+    height,
+    value,
+  }) => {
     return (
       <text
         x={x + width / 2}
         y={y}
         fill="#666"
-        textAnchor="middle"
+        textAnchor={option.textAnchor}
         dy={-6}
-      >{`${value} UAH`}</text>
+      >{`${xParams.hide ? name : ''}   ${value} UAH`}</text>
     );
   };
 
   return (
     <BarMain ref={ref}>
       <BarChart
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-        layout={layout}
+        margin={{ top: 20, right: 0, bottom: 20, left: 0 }}
+        layout={option.layout}
         width={size.clientWidth}
         height={size.clientHeight}
         data={data}
+        barCategoryGap={5}
       >
         <XAxis
           hide={xParams.hide}
           type={xParams.type}
           dataKey={xParams.dataKey}
           stroke="#8884d8"
+          width={20}
         />
         <YAxis
           hide={yParams.hide}
           type={yParams.type}
           dataKey={yParams.dataKey}
           stroke="#8884d8"
+          tickCount={10}
+          width={50}
         />
-        <CartesianGrid stroke="#ccc" vertical={false} strokeDasharray="0 0" />
-        <Bar dataKey="pv" fill="#FF751D" barSize={40}>
+        <CartesianGrid
+          stroke="#ccc"
+          horizontal={option.strokeHorizontal}
+          vertical={false}
+          strokeDasharray="0 0"
+        />
+        <Bar
+          dataKey="pv"
+          fill="#FF751D"
+          barSize={40}
+          shape={<Rectangle radius={option.shapeRadius} />}
+        >
           <LabelList content={renderCustomBarLabel} position="top" />
+          <LabelList content={renderCustomBarLabel} position="top" />
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={index % 3 ? '#FFB182' : '#FF751D'}
+            />
+          ))}
         </Bar>
       </BarChart>
     </BarMain>
