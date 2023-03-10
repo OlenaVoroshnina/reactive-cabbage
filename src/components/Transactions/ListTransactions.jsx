@@ -30,14 +30,16 @@ export const ListTransactions = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentId, setCurrentId] = useState(null);
 
-  const sortedTransactions = transactions.slice().sort((a, b) => {
-    const first = new Date(a.date).getTime();
-    const second = new Date(b.date).getTime();
-    if (first - second === 0) {
-      return first;
-    }
-    return second - first;
-  });
+  function sortedTransactions(transactions) {
+    return transactions.slice().sort((a, b) => {
+      const first = new Date(a.date).getTime();
+      const second = new Date(b.date).getTime();
+      if (first - second === 0) {
+        return first;
+      }
+      return second - first;
+    });
+  }
 
   useEffect(() => {
     dispatch(getAllUserInfo());
@@ -58,44 +60,47 @@ export const ListTransactions = () => {
 
   return (
     <StyledList>
-      {sortedTransactions.slice(0, 7).map(item => {
-        const { _id, description, amount, date, category } = item;
-        let color;
-        let minus = false;
-        if (
-          translateToEng(category) === 'Salary' ||
-          translateToEng(category) === 'Additional income'
-        ) {
-          color = 'green';
-        } else {
-          color = 'red';
-          minus = '-';
-        }
+      {Array.isArray(transactions) &&
+        sortedTransactions(transactions)
+          .slice(0, 7)
+          .map(item => {
+            const { _id, description, amount, date, category } = item;
+            let color;
+            let minus = false;
+            if (
+              translateToEng(category) === 'Salary' ||
+              translateToEng(category) === 'Additional income'
+            ) {
+              color = 'green';
+            } else {
+              color = 'red';
+              minus = '-';
+            }
 
-        return (
-          <ItemStyled key={_id}>
-            <ItemNameCont>
-              <ItemDateCont>
-                <ItemDate>{date}</ItemDate>
-                <ItemName>{description}</ItemName>
-                <ItemCategory>{translateToEng(category)}</ItemCategory>
-              </ItemDateCont>
-            </ItemNameCont>
-            <SumCont>
-              <Sum style={{ color }} className="sum">
-                {minus} {amount.toFixed(2)}
-              </Sum>
-              <span
-                id={_id}
-                onClick={() => handleModalOpen(_id)}
-                style={{ cursor: 'pointer' }}
-              >
-                <DeleteIcon />
-              </span>
-            </SumCont>
-          </ItemStyled>
-        );
-      })}
+            return (
+              <ItemStyled key={_id}>
+                <ItemNameCont>
+                  <ItemDateCont>
+                    <ItemDate>{date}</ItemDate>
+                    <ItemName>{description}</ItemName>
+                    <ItemCategory>{translateToEng(category)}</ItemCategory>
+                  </ItemDateCont>
+                </ItemNameCont>
+                <SumCont>
+                  <Sum style={{ color }} className="sum">
+                    {minus} {amount.toFixed(2)}
+                  </Sum>
+                  <span
+                    id={_id}
+                    onClick={() => handleModalOpen(_id)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <DeleteIcon />
+                  </span>
+                </SumCont>
+              </ItemStyled>
+            );
+          })}
       {modalOpen && (
         <UniversalModal
           closeModal={handleModalClose}
