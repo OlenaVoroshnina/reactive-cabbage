@@ -17,15 +17,20 @@ import {
   SumCont,
   StyledList,
 } from 'components/Transactions/ListTransactions.styled';
+import { useLocation } from 'react-router-dom';
+import { selectExpenses, selectIncomes } from 'redux/selectors';
 
 export const ListTransactions = () => {
-  const allTransactions = useSelector(state => state.auth.transactions);
+  const expenses = useSelector(selectExpenses);
+  const incomes = useSelector(selectIncomes);
+  const location = useLocation();
+  let transactions = location.pathname === '/expenses' ? expenses : incomes;
 
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [currentId, setCurrentId] = useState(null);
 
-  const sortedTransactions = allTransactions.slice().sort((a, b) => {
+  const sortedTransactions = transactions.slice().sort((a, b) => {
     const first = new Date(a.date).getTime();
     const second = new Date(b.date).getTime();
     if (first - second === 0) {
@@ -36,7 +41,7 @@ export const ListTransactions = () => {
 
   useEffect(() => {
     dispatch(getAllUserInfo());
-  }, [allTransactions, dispatch]);
+  }, [transactions, dispatch]);
 
   const handleModalOpen = id => {
     setModalOpen(true);
