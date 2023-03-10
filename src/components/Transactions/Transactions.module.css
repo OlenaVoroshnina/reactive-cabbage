@@ -1,3 +1,25 @@
-.transactions {
-  max-width: 1100px;
+.transactionsHistory {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .transactions {
+    max-width: 704;
+    min-height: 616px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .transactions {
+    max-width: 1098px;
+    min-height: 579px;
+  }
+
+  .transactionsHistory {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-top: 60px;
+    display: flex;
+    gap: 75px;
+  }
 }
