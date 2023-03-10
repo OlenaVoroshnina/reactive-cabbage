@@ -26,8 +26,8 @@ import { BackgroundLayout } from 'components/BackgroundLayout/BackgroundLayout';
 import LogoSrc from './../images/imgReports/title_kapusta.png';
 import TwoCabbages from './../images/cabbage/cabagesTwo.svg';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 import EyeOpened from './../images/eye/eye-open.svg';
 import EyeClosed from './../images/eye/eye-blocked.svg';
@@ -48,10 +48,14 @@ export const LoginPage = () => {
       password: password.value,
     };
     dispatch(logIn(user)).then(data => {
-      if (data.error.message === 'Rejected') {
-        toast('Data entered incorrectly. Try again');
-        return;
-      }
+      // console.log(data);
+      // if (data?.error?.message === 'Rejected') {
+      //   toast('Data entered incorrectly. Try again');
+      //   return;
+      // }
+      // if (data.requestStatus === 'fulfilled') {
+      //   return;
+      // }
     });
     event.target.reset();
   };
@@ -119,7 +123,6 @@ export const LoginPage = () => {
         </FormContainer>
       </ContentWrapper>
       <BottomCabbages alt="Two Cabbages" src={TwoCabbages} />
-      <ToastContainer />
     </Container>
   );
 };
