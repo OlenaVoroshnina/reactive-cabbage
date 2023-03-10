@@ -4,6 +4,7 @@ import { deleteTransaction } from 'redux/transactions/operation';
 import { useState, useEffect } from 'react';
 import UniversalModal from 'components/UniversalModal/UniversalModal';
 import { getAllUserInfo } from 'redux/auth/operation';
+import { translateToEng } from 'hooks/useCategory';
 
 import {
   ItemName,
@@ -56,7 +57,10 @@ export const ListTransactions = () => {
         const { _id, description, amount, date, category } = item;
         let color;
         let minus = false;
-        if (category === 'salary' || category === 'add income') {
+        if (
+          translateToEng(category) === 'Salary' ||
+          translateToEng(category) === 'Add income'
+        ) {
           color = 'green';
         } else {
           color = 'red';
@@ -69,7 +73,7 @@ export const ListTransactions = () => {
               <ItemDateCont>
                 <ItemDate>{date}</ItemDate>
                 <ItemName>{description}</ItemName>
-                <ItemCategory>{category}</ItemCategory>
+                <ItemCategory>{translateToEng(category)}</ItemCategory>
               </ItemDateCont>
             </ItemNameCont>
             <SumCont>
