@@ -41,7 +41,11 @@ export const ListTransactions = () => {
 
   useEffect(() => {
     dispatch(getAllUserInfo());
+
   }, [transactions, dispatch]);
+
+  }, [dispatch]);
+
 
   const handleModalOpen = id => {
     setModalOpen(true);
