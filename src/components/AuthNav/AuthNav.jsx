@@ -39,7 +39,6 @@ export const AuthNav = () => {
   };
 
   return (
-
     isLoggedIn && (
       <>
         <AuthNavContainer>
@@ -63,4 +62,5 @@ export const AuthNav = () => {
         )}
       </>
     )
-
+  );
+};
