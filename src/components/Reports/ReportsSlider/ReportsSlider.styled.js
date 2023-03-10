@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   position: relative;
   @media screen and (min-width: 768px) {
     padding-top: 0;
+    margin-left: auto;
   }
 `;
 
