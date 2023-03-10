@@ -41,11 +41,7 @@ export const ListTransactions = () => {
 
   useEffect(() => {
     dispatch(getAllUserInfo());
-
-  }, [transactions, dispatch]);
-
   }, [dispatch]);
-
 
   const handleModalOpen = id => {
     setModalOpen(true);
@@ -68,7 +64,7 @@ export const ListTransactions = () => {
         let minus = false;
         if (
           translateToEng(category) === 'Salary' ||
-          translateToEng(category) === 'Add income'
+          translateToEng(category) === 'Additional income'
         ) {
           color = 'green';
         } else {
