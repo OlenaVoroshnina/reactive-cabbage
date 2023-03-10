@@ -88,7 +88,7 @@ export const TransactionsFormIncome = () => {
             name="amount"
             className={css.transactionsAmount}
             onChange={onInputChange}
-            value={amount}
+            value={amount > 0 && amount}
             placeholder="00.00"
             required
           />
