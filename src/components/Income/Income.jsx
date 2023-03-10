@@ -14,6 +14,7 @@ export const Income = () => {
     // if (user) {
     //   dispatch(getIncome());
     // }
+
     dispatch(getIncome());
   }, [dispatch]);
 
