@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+// import 'react-tabs/style/react-tabs.css';
 import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
 import { useAuth } from './../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +15,8 @@ import {
   TabListStyled,
   TabStyled,
   NavLinkStyled,
+  TabWrapper,
+  OutletStyled,
   // BlockHeading
 } from './HomePage.styled';
 
@@ -54,8 +56,10 @@ export const HomePage = () => {
                 </NavLinkStyled>
               </TabStyled>
             </TabListStyled>
-            <TabPanel>{<Outlet />}</TabPanel>
-            <TabPanel>{<Outlet />}</TabPanel>
+            <TabWrapper>
+              <TabPanel>{<Outlet />}</TabPanel>
+              <TabPanel>{<Outlet />}</TabPanel>
+            </TabWrapper>
           </TabsStyled>
         </Background>
       ) : (

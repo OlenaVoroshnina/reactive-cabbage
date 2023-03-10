@@ -16,9 +16,11 @@ export const StyledDatePicker = styled.div`
     line-height: calc(14 / 12);
     letter-spacing: 1.04;
     color: #52555f;
+    background-color: transparent;
     outline: none;
     border: none;
     cursor: pointer;
+    margin: 34px 32px;
     :hover,
     :focus {
       color: #ff751d;

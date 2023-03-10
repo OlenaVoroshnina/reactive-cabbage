@@ -149,6 +149,7 @@
     color: #ffffff;
     box-shadow: 8px 2px 22px 0px rgba(0, 0, 0, 0.38);
     cursor: pointer;
+    margin-top: 35px;
   }
 
   .transactionsClearBtn {
@@ -166,6 +167,7 @@
     color: #2e2f30;
     box-shadow: 2px 2px 22px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    margin-top: 35px;
   }
 }
 
@@ -373,6 +375,6 @@
 
   .transactionsButtonsWrap {
     margin-left: 32px;
-    margin-top: 0;
+    margin-top: 24px;
   }
 }

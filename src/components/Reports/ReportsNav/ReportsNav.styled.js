@@ -60,6 +60,7 @@ export const PreBox = styled.div`
   padding-top: 16px;
   @media screen and (min-width: 768px) {
     display: flex;
+    justify-content: center;
     padding-top: 40px;
     padding-bottom: 32px;
   }
@@ -67,23 +68,21 @@ export const PreBox = styled.div`
 export const Box = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
-    flex-direction: row-reverse;
-    width: calc((100% / 3) * 2);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: calc((100% / 3) * 2);
   }
 `;
 
 export const BalanceBox = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    ${'' /* justify-content: center; */}
     gap: 20px;
   }
 `;

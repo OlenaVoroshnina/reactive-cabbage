@@ -81,6 +81,7 @@ export const TabListStyled = styled(TabList)`
   bottom: 0;
   left: 0;
   margin: 0;
+  
   @media (min-width: 768px) {
     position: relative;
     width: 276px;
@@ -105,6 +106,7 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const StyledReportsBtn = styled(Link)`
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 45px;
   text-align: center;
@@ -120,6 +122,7 @@ export const StyledReportsBtn = styled(Link)`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+    
   }
   @media screen and (min-width: 1280px) {
     /* position: absolute;
@@ -141,9 +144,11 @@ export const StyledReportsBtn = styled(Link)`
 
 export const BalanceWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  ${'' /* justify-content: center;
+  align-items: baseline; */}
   padding: 40px 140px 8px;
+  margin-bottom: 32px;
 `;
 
 export const BlockHeading = styled.div`
@@ -184,4 +189,14 @@ export const BlockHeading = styled.div`
     gap: 298px;
     justify-content: flex-end;
   }
+`;
+
+export const TabWrapper = styled.div`
+  position: relative;
+  top: 10px;
+`;
+
+export const OutletStyled = styled.div`
+  padding: 15px;
+  display: flex:
 `;
