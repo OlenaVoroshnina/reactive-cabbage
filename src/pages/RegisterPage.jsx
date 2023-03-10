@@ -29,7 +29,7 @@ import TwoCabbages from './../images/cabbage/cabagesTwo.svg';
 import EyeOpened from './../images/eye/eye-open.svg';
 import EyeClosed from './../images/eye/eye-blocked.svg';
 
-export const RegisterPage = () => {
+const RegisterPage = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -135,3 +135,5 @@ export const RegisterPage = () => {
     </Container>
   );
 };
+
+export default RegisterPage;
