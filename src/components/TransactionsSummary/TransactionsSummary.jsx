@@ -16,7 +16,7 @@ export const TransactionsSummary = () => {
 
    let data;
 
-   if (location.pathname === '/home/income') {
+   if (location.pathname === '/income') {
      data = Object.entries(incomeData) ?? [];
    }
 
