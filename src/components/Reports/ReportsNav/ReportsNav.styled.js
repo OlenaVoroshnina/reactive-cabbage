@@ -67,9 +67,9 @@ export const PreBox = styled.div`
 `;
 export const Box = styled.div`
   @media screen and (min-width: 768px) {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     width: calc((100% / 3) * 2);
   }
 `;
@@ -78,6 +78,7 @@ export const BalanceBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;

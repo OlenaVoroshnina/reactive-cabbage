@@ -34,6 +34,7 @@ export const ReportsNav = () => {
         <BalanceBox>
           {isMobile && (
             <>
+              <ReportsSlider />
               <BalanceText>Balance:</BalanceText>
               <BalanceAmount>
                 {transactionBalance.toFixed(2) ?? 0} UAH
@@ -46,11 +47,17 @@ export const ReportsNav = () => {
               <BalanceAmount>
                 {transactionBalance.toFixed(2) ?? 0} UAH
               </BalanceAmount>
+              <ReportsSlider />
             </>
           )}
-          {isDesktop && <Balance />}
+          {isDesktop && (
+            <>
+              <Balance />
+              <ReportsSlider />
+            </>
+          )}
         </BalanceBox>
-        <ReportsSlider />
+        {/* <ReportsSlider /> */}
       </Box>
     </PreBox>
   );
