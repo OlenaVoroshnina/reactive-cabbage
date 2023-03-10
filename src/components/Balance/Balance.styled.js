@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-
 export const StyledBalanceForm = styled.form`
-
   margin: 0 auto 50px;
-  padding: 0 20px;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
@@ -25,14 +22,15 @@ export const StyledBalanceForm = styled.form`
   }
   .inputTag {
     font-weight: 700;
-    width: 140px;
+    width: 125px;
+    height: 44px;
     padding: 22px 0px;
     color: #52555f;
     text-align: center;
     border: 2px solid white;
-    border-radius: 22px 0 0 22px;
+    border-radius: 16px;
     outline: none;
-    background-color: #F2F5FC;
+    background-color: #f2f5fc;
     ::-webkit-outer-spin-button,
     ::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -59,16 +57,21 @@ export const StyledBalanceForm = styled.form`
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    background-color: #F2F5FC;
-    width: 140px;
+    background-color: #f2f5fc;
+    width: 125px;
+    height: 44px;
     padding: 12px 18px;
     color: rgba(82, 85, 95, 0.7);
     text-align: left;
     text-transform: uppercase;
     border: 2px solid white;
     border-left: none;
-    border-radius: 0 22px 22px 0;
+    border-radius: 16px;
     outline: none;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
     :hover,
     :focus {
       color: white;
@@ -83,6 +86,9 @@ export const StyledBalanceForm = styled.form`
       border-left: 2px solid white;
     }
   }
-
 `;
-
+export const BtnsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+`;

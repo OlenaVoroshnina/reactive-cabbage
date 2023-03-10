@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import logoutImg from 'images/logout.svg';
 import logoImg from 'images/logo.svg';
 import { selectUserEmail } from 'redux/selectors';
-// import { selectIsLoggedIn } from 'redux/selectors';
-// import UniversalModal from 'components/UniversalModal/UniversalModal';
+import { selectIsLoggedIn } from 'redux/selectors';
+import UniversalModal from 'components/UniversalModal/UniversalModal';
 import { logOut } from 'redux/auth/operation';
 
 import {
   AuthNavContainer,
+  AuthNavExitWrapper,
   UserAvatar,
   UserEmail,
   LogoutImg,
@@ -20,7 +21,7 @@ import {
 export const AuthNav = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const userEmail = useSelector(selectUserEmail);
 
   const handleClick = () => {
@@ -36,29 +37,28 @@ export const AuthNav = () => {
   };
 
   return (
-    // isLoggedIn && (
-    <>
-      <AuthNavContainer>
-        <Link to="/">
-          <img src={logoImg} alt="logo" />
-        </Link>
-        <UserAvatar>{userEmail[0].toUpperCase()}</UserAvatar>
-        <UserEmail>{userEmail}</UserEmail>
-        <LogoutImg src={logoutImg} alt="logout" onClick={handleModalOpen} />
-        <Divider></Divider>
-        <ExitButton type="button" onClick={handleModalOpen}>
-          Exit
-        </ExitButton>
-      </AuthNavContainer>
-      {modalOpen && (
-        <p closeModal={handleModalClose} dispatch={handleClick}>
-          Do you really want to leave?
-        </p>
-        // <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
-        //   Do you really want to leave?
-        // </UniversalModal>
-      )}
-    </>
+    isLoggedIn && (
+      <>
+        <AuthNavContainer>
+          <Link to="/">
+            <img src={logoImg} alt="logo" />
+          </Link>
+          <AuthNavExitWrapper>
+            <UserAvatar>{userEmail[0].toUpperCase()}</UserAvatar>
+            <UserEmail>{userEmail}</UserEmail>
+            <LogoutImg src={logoutImg} alt="logout" onClick={handleModalOpen} />
+            <Divider></Divider>
+            <ExitButton type="button" onClick={handleModalOpen}>
+              Exit
+            </ExitButton>
+          </AuthNavExitWrapper>
+        </AuthNavContainer>
+        {modalOpen && (
+          <UniversalModal closeModal={handleModalClose} dispatch={handleClick}>
+            Do you really want to leave?
+          </UniversalModal>
+        )}
+      </>
+    )
   );
-  // );
 };

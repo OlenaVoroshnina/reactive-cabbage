@@ -1,29 +1,28 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import { ReactComponent as ReportsIcon } from '../../images/reports-icon.svg';
+import { useAuth } from './../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import Balance from 'components/Balance/Balance';
 
-import { Background } from './HomePage.styled';
-
 import {
+  Background,
+  StyledReportsBtn,
+  BalanceWrapper,
   TabsStyled,
   TabListStyled,
   TabStyled,
   NavLinkStyled,
 } from './HomePage.styled';
 
-// import { Tab, Tabs, TabList } from 'react-tabs';
-// import { NavLink } from 'react-router-dom';
-import { useAuth } from './../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-
 export const HomePage = () => {
   const location = useLocation();
   const index = location.pathname === '/income' ? 1 : 0;
   const { isLoggedIn } = useAuth();
   const path = location.pathname === '/' ? '/income' : location.pathname;
-  console.log(index);
+  // console.log(index);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,20 +32,24 @@ export const HomePage = () => {
     <>
       {isLoggedIn ? (
         <Background>
-          <div>
+          <BalanceWrapper>
             <Balance />
-            <Link to="/reports" state={{ from: location }}>
+            <StyledReportsBtn to="/reports" state={{ from: location }}>
               <span>Reports</span>
-              <ReportsIcon />
-            </Link>
-          </div>
+              <ReportsIcon className="reportsIcon" />
+            </StyledReportsBtn>
+          </BalanceWrapper>
           <TabsStyled selectedIndex={index} onSelect={() => {}}>
             <TabListStyled>
               <TabStyled>
-                <NavLinkStyled to="expenses">Expenses</NavLinkStyled>
+                <NavLinkStyled to="expenses" style={{ textDecoration: 'none' }}>
+                  Expenses
+                </NavLinkStyled>
               </TabStyled>
               <TabStyled>
-                <NavLinkStyled to="income">Income</NavLinkStyled>
+                <NavLinkStyled to="income" style={{ textDecoration: 'none' }}>
+                  Income
+                </NavLinkStyled>
               </TabStyled>
             </TabListStyled>
             <TabPanel>{<Outlet />}</TabPanel>
