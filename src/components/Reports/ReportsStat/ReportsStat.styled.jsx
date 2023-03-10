@@ -64,6 +64,9 @@ export const ItemIncome = styled.span`
 `;
 export const Box = styled.div`
   padding-top: 30px;
+  margin-top: 32px;
+  border-radius: 30px;
+    background-color: #fff;
   @media screen and (min-width: 768px) {
     padding: 20px 40px;
     margin-top: 32px;
