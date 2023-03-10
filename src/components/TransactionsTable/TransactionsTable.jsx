@@ -16,10 +16,10 @@ export const TransactionsTable = () => {
   const expenses = useSelector(selectExpenses);
   const incomes = useSelector(selectIncomes);
   const location = useLocation();
-  let transactions = location.pathname === '/expenses' ? expenses : incomes;
+  const transactions = location.pathname === '/expenses' ? expenses : incomes;
 
   const dispatch = useDispatch();
-  let color;
+  let color = null;
   if (transactions[0]) {
     color =
       translateToEng(transactions[0].category) === 'Salary' ||
@@ -47,14 +47,16 @@ export const TransactionsTable = () => {
     setModalOpen(false);
   };
 
-  const sortedTransactions = transactions.slice().sort((a, b) => {
-    const first = new Date(a.date).getTime();
-    const second = new Date(b.date).getTime();
-    if (first - second === 0) {
-      return first;
-    }
-    return second - first;
-  });
+  function sortedTransactions(transactions) {
+    return transactions.slice().sort((a, b) => {
+      const first = new Date(a.date).getTime();
+      const second = new Date(b.date).getTime();
+      if (first - second === 0) {
+        return first;
+      }
+      return second - first;
+    });
+  }
 
   return (
     <>
@@ -69,28 +71,31 @@ export const TransactionsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedTransactions.slice(0).map(el => {
-            const { _id, description, amount, date, category } = el;
-            return (
-              <tr key={_id} style={{ height: 40 }}>
-                <td>{date.split('-').reverse().join('.')}</td>
-                <td>{description}</td>
-                <td>{translateToEng(category)}</td>
-                <td style={{ color }}>
-                  {minus} {amount.toFixed(2)}
-                </td>
-                <td>
-                  <span
-                    id={_id}
-                    onClick={() => handleModalOpen(_id)}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <DeleteIcon />
-                  </span>
-                </td>
-              </tr>
-            );
-          })}
+          {Array.isArray(transactions) &&
+            sortedTransactions(transactions)
+              .slice(0)
+              .map(el => {
+                const { _id, description, amount, date, category } = el;
+                return (
+                  <tr key={_id} style={{ height: 40 }}>
+                    <td>{date.split('-').reverse().join('.')}</td>
+                    <td>{description}</td>
+                    <td>{translateToEng(category)}</td>
+                    <td style={{ color }}>
+                      {minus} {amount.toFixed(2)}
+                    </td>
+                    <td>
+                      <span
+                        id={_id}
+                        onClick={() => handleModalOpen(_id)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <DeleteIcon />
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
         </tbody>
       </TransactionTable>
       {modalOpen && (
