@@ -19,7 +19,14 @@ export const TransactionsTable = () => {
   let transactions = location.pathname === '/expenses' ? expenses : incomes;
 
   const dispatch = useDispatch();
-  const color = transactions[1];
+  let color;
+  if (transactions[0]) {
+    color =
+      translateToEng(transactions[0].category) === 'Salary' ||
+      translateToEng(transactions[0].category) === 'Additional income'
+        ? 'green'
+        : 'red';
+  }
   let minus = '-';
   if (color === 'green') {
     minus = false;
