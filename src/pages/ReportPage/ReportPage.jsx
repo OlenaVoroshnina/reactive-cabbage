@@ -7,16 +7,17 @@ import BgCabbage from 'components/Backgrounds/BgCabbage/BgCabbage';
 import { Background } from '../HomePage/HomePage.styled';
 export function ReportPage() {
   return (
-    <>
+    <div style={{position: 'relative'}}>
       <Background>
         <WraperBg>
           <ReportsNav />
           <ReportsStat />
-			  </WraperBg>
+        </WraperBg>
 			  <BgCabbage />
+			  
       </Background>
       {/* <BgGrey /> */}
-    </>
+    </div>
   );
 }
 

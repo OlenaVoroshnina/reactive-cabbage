@@ -73,7 +73,7 @@ export const BarChartComponent = ({ budget }) => {
       <text
         x={x + width / 2}
         y={y}
-        fill="#666"
+        fill="#52555F"
         textAnchor="middle"
         dy={-6}
       >{`${value} UAH`}</text>
@@ -88,21 +88,23 @@ export const BarChartComponent = ({ budget }) => {
         width={size.clientWidth}
         height={size.clientHeight}
         data={data}
+        fontSize={12}
       >
         <XAxis
           hide={xParams.hide}
           type={xParams.type}
           dataKey={xParams.dataKey}
-          stroke="#8884d8"
+          stroke="#52555F"
+          fontSize={12}
         />
         <YAxis
           hide={yParams.hide}
           type={yParams.type}
           dataKey={yParams.dataKey}
-          stroke="#8884d8"
+          stroke="#52555F"
         />
         <CartesianGrid stroke="#ccc" vertical={false} strokeDasharray="0 0" />
-        <Bar dataKey="pv" fill="#FF751D" barSize={40}>
+        <Bar dataKey="pv" fill="#FF751D" barSize={40} >
           <LabelList content={renderCustomBarLabel} position="top" />
         </Bar>
       </BarChart>

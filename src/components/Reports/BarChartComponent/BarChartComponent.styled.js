@@ -11,4 +11,5 @@ export const BarMain = styled.div`
   border-radius: 30px;
   background-color: #fff;
   box-sizing: revert;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 `;

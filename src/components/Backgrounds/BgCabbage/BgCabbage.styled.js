@@ -7,7 +7,7 @@ export const StyledBgCabbage = styled.div`
 
   @media screen and (min-width: 768px) {
     display: block;
-    width: 183px;
+    width: 100%;
     height: 146px;
     position: absolute;
     z-index: -1;
@@ -18,15 +18,12 @@ export const StyledBgCabbage = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-	margin: 0 auto;
     left: 0;
-    top: 656px;
-    width: 1096px;
+    top: 720px;
+   //  width: 1096px;
     height: 232px;
     background-image: url(${CabagesBgDesk});
-    background-repeat: no-repeat;
 	 
-	//  background-repeat-x: repeat;
   }
 `;
 
