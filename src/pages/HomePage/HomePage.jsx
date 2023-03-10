@@ -16,7 +16,7 @@ import {
   TabStyled,
   NavLinkStyled,
   TabWrapper,
-  OutletStyled,
+  // OutletStyled,
   // BlockHeading
 } from './HomePage.styled';
 

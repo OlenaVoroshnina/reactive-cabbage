@@ -198,5 +198,5 @@ export const TabWrapper = styled.div`
 
 export const OutletStyled = styled.div`
   padding: 15px;
-  display: flex:
+  display: flex;
 `;
