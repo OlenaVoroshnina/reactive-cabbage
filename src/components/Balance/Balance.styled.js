@@ -5,9 +5,9 @@ export const StyledBalanceForm = styled.form`
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
-    gap: 20px;
     align-items: baseline;
-    margin: 0;
+    gap: 20px;
+    margin: 0 auto;
   }
   @media screen and (min-width: 768px) {
    //  margin: 0 auto;

@@ -19,8 +19,10 @@ export const Text = styled.button`
   padding: 0 5px;
   border: none;
   color: #000;
+  background-color: var(--color-white);
 `;
 
 export const ReportSliderTitle = styled.p`
   color: rgba(82, 85, 95, 0.7);
+  font-size: 12px;
 `;

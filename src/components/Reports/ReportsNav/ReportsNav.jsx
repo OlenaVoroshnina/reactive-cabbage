@@ -31,7 +31,6 @@ export const ReportsNav = () => {
         <ButtonBackText>Main page</ButtonBackText>
       </ButtonBack>
       <Box>
-        <ReportsSlider />
         <BalanceBox>
           {isMobile && (
             <>
@@ -51,6 +50,7 @@ export const ReportsNav = () => {
           )}
           {isDesktop && <Balance />}
         </BalanceBox>
+        <ReportsSlider />
       </Box>
     </PreBox>
   );
