@@ -7,7 +7,7 @@ export const List = styled.ul`
   border-radius: 20px;
   ${'' /* background-color: var(--primary-bg-color); */}
   background-color: #fff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 `;
 export const Item = styled.li`
   position: relative;

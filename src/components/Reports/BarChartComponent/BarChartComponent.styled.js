@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 
 export const BarMain = styled.div`
   font-size: 10px;
-  width: 100vw;
-  height: 100vh;
-  padding: 20px 40px;
+  width: 280px;
+  height: 422px;
+//   padding: 20px 40px;
+  margin: 0 auto;
   margin-top: 32px;
   margin-bottom: 80px;
   border-radius: 30px;
@@ -12,11 +13,10 @@ export const BarMain = styled.div`
   box-sizing: revert;
 
   @media screen and (min-width: 768px) {
-    width: 80vw;
-    height: 50vh;
+    width: 704px;
+   //  height: 422px;
   }
   @media screen and (min-width: 1280px) {
-    width: 80vw;
-    height: 50vh;
+    width: 1034px;
   }
 `;
