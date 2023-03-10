@@ -8,10 +8,12 @@ export const StyledBalanceForm = styled.form`
     align-items: baseline;
     gap: 20px;
     margin: 0 auto;
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      margin: 0 auto;
+    }
   }
-  @media screen and (min-width: 768px) {
-   //  margin: 0 auto;
-  }
+
   .title {
     color: rgba(82, 85, 95, 0.7);
     margin-bottom: 8px;
@@ -51,6 +53,13 @@ export const StyledBalanceForm = styled.form`
       padding: 12px 0px;
       border-radius: 16px;
     }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      width: 140px;
+      height: 44px;
+      padding: 20px 0px;
+      border-radius: 22px 0 0 22px;
+    }
   }
   .btn {
     font-family: 'Roboto';
@@ -85,10 +94,19 @@ export const StyledBalanceForm = styled.form`
       text-align: center;
       border-left: 2px solid white;
     }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      width: 140px;
+      height: 44px;
+      border-radius: 0 22px 22px 0;
+    }
   }
 `;
 export const BtnsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    gap: 0;
+  }
 `;
