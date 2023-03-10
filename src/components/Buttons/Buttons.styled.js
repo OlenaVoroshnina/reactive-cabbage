@@ -14,6 +14,14 @@ export const StyledMainBtn = styled.button`
   text-transform: uppercase;
   font-size: 12px;
   line-height: 1.17;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover {
+    background-color: #fe9c0a;
+  }
 `;
 
 export const StyledSecondaryBtn = styled.button`
@@ -29,4 +37,13 @@ export const StyledSecondaryBtn = styled.button`
   text-align: center;
   letter-spacing: 0.02em;
   line-height: 1.17;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover {
+    background-color: #ff751d;
+    color: #fff;
+  }
 `;

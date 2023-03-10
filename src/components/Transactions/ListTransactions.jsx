@@ -66,9 +66,9 @@ export const ListTransactions = () => {
         return (
           <ItemStyled key={_id}>
             <ItemNameCont>
-              <ItemName>{description}</ItemName>
               <ItemDateCont>
                 <ItemDate>{date}</ItemDate>
+                <ItemName>{description}</ItemName>
                 <ItemCategory>{category}</ItemCategory>
               </ItemDateCont>
             </ItemNameCont>

@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const StyledList = styled.ul`
   width: 320px;
   @media screen and (min-width: 768px) {
-    /* display: none; */
+    width: 572px;
+
+    @media screen and (min-width: 1200px) {
+      width: 746px;
+    }
   }
 `;
 
@@ -15,9 +19,10 @@ export const ItemStyled = styled.li`
 `;
 
 export const ItemName = styled.p`
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
+  width: 188px;
   letter-spacing: 0.04em;
 `;
 
@@ -25,17 +30,19 @@ export const ItemNameCont = styled.div``;
 
 export const ItemDateCont = styled.div`
   display: flex;
-  gap: 20px;
+  flex-direction: raw;
+  gap: 25px;
 `;
 
 export const ItemDate = styled.p`
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1.12;
+  width: 86px;
   letter-spacing: 0.04em;
 `;
 
 export const ItemCategory = styled.p`
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1.12;
   letter-spacing: 0.04em;
 `;

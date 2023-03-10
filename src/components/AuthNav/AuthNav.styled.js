@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
 export const AuthNavContainer = styled.nav`
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+`;
+
+export const AuthNavExitWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
@@ -47,6 +55,14 @@ export const Divider = styled.span`
 
 export const ExitButton = styled.button`
   display: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover {
+    color: #ff751d;
+  }
   @media screen and (min-width: 768px) {
     display: block;
     cursor: pointer;

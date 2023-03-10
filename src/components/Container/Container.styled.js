@@ -34,5 +34,9 @@ export const ContainerMain = styled.div`
     width: 1280px;
     padding-left: 16px;
     padding-right: 16px;
+
+    //  position: relative;
+
+
   }
 `;

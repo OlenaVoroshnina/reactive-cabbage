@@ -31,7 +31,8 @@ const BalanceModal = () => {
     return () => body.classList.remove('no-scroll');
   }, []);
 
-  return createPortal( 
+  return createPortal(
+    isModalOpen && (
       <StyledBackdrop onClick={handleBackdropClick}>
         <StyledModal>
           <StyledTitle>
@@ -39,7 +40,8 @@ const BalanceModal = () => {
           </StyledTitle>
           <StyledText>You can't spend money until you have it :)</StyledText>
         </StyledModal>
-      </StyledBackdrop>,
+      </StyledBackdrop>
+    ),
     modalRoot
   );
 };
