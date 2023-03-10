@@ -32,7 +32,7 @@ import TwoCabbages from './../images/cabbage/cabagesTwo.svg';
 import EyeOpened from './../images/eye/eye-open.svg';
 import EyeClosed from './../images/eye/eye-blocked.svg';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
@@ -126,3 +126,5 @@ export const LoginPage = () => {
     </Container>
   );
 };
+
+export default LoginPage;
