@@ -18,13 +18,15 @@ export const StyledBgCabbage = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
+	margin: 0 auto;
     left: 0;
     top: 656px;
-    width: 1600px;
+    width: 1096px;
     height: 232px;
     background-image: url(${CabagesBgDesk});
     background-repeat: no-repeat;
-	 background-repeat-x: repeat;
+	 
+	//  background-repeat-x: repeat;
   }
 `;
 
