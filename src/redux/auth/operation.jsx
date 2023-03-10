@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://kapusta-backend.goit.global/';
@@ -29,8 +30,10 @@ export const logIn = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   try {
     const { data } = await axios.post('/auth/login', user);
     token.set(data.accessToken);
+    toast('Successfully logged in!');
     return data;
   } catch (error) {
+    toast('Data entered incorrectly. Try again');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
