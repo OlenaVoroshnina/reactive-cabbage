@@ -31,20 +31,20 @@ export const TransactionsSummary = () => {
           <th className={css.summaryTableTitle}>Summary</th>
         </tr>
       </thead>
-      {data?.map(item => {
-        if (item[1] === 'N/A') {
-          return false;
-        } else {
-          return (
-            <tbody>
+      <tbody>
+        {data?.map(item => {
+          if (item[1] === 'N/A') {
+            return false;
+          } else {
+            return (
               <tr key={`${item[0]}${item[1]}`} className={css.summaryTableRow}>
                 <td>{monthNameTranslate(item[0])}</td>
                 <td>{item[1].toFixed(2)}</td>
               </tr>
-            </tbody>
-          );
-        }
-      })}
+            );
+          }
+        })}
+      </tbody>
     </table>
   );
 };
