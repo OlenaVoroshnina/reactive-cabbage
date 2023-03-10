@@ -15,7 +15,9 @@ const Balance = () => {
   // const isUserOperations = useSelector(selectIncomeTotal).transactions.length;
 
   // const isLoading = useSelector(selectIsLoading);
+
   // console.log(typeof transactionBalance);
+
 
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);

@@ -19,7 +19,6 @@ export const Income = () => {
   return (
     <>
       <div>
-       
         <Transactions />
         <Outlet />
       </div>

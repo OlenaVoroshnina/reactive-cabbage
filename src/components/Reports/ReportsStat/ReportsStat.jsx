@@ -9,7 +9,6 @@ import ButtonsSwitch from 'components/Reports/ButtonSwitch/ButtonSwitch';
 // import { ReportsTable } from 'components/Reports/Table/ReportsTable';
 import { BarChartComponent } from 'components/Reports/BarChartComponent/BarChartComponent';
 
-
 import {
   List,
   Item,
@@ -26,10 +25,10 @@ export const ReportsStat = () => {
   const incomeTotal = useSelector(selectIncomeTotal);
   const expensesTotal = useSelector(selectExpensesTotal);
   const [budget, setBudget] = useState('expenses');
- 
+
   const handleClick = () => {
     if (budget === 'expenses') {
-      setBudget('income');
+      setBudget('incomes');
       dispatch(filteredDataAction([]));
       return;
     }
@@ -59,7 +58,7 @@ export const ReportsStat = () => {
 
         <ReportsList onChange={budget}></ReportsList>
       </Box>
-      <BarChartComponent />
+      <BarChartComponent budget={budget} />
       {/* <ReportsTable onChange={budget}></ReportsTable> */}
     </div>
   );

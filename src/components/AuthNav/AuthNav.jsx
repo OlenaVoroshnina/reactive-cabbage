@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import logoutImg from 'images/logout.svg';
 import logoImg from 'images/logo.svg';
 import { selectUserEmail } from 'redux/selectors';
+
 import { selectIsLoggedIn } from 'redux/selectors';
+
 import UniversalModal from 'components/UniversalModal/UniversalModal';
 import { logOut } from 'redux/auth/operation';
 
@@ -37,6 +39,7 @@ export const AuthNav = () => {
   };
 
   return (
+
     isLoggedIn && (
       <>
         <AuthNavContainer>
@@ -60,5 +63,4 @@ export const AuthNav = () => {
         )}
       </>
     )
-  );
-};
+

@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import { translateToRus } from 'hooks/useCategory';
 import css from './TransactionsForm.module.css';
 
-export const TransactionsForm = () => {
+export const TransactionsFormExpenses = () => {
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('Transport');
@@ -73,15 +73,13 @@ export const TransactionsForm = () => {
         />
         <select
           name="category"
-          id="category"
+          id="expencesCategory"
           className={css.transactionsCategory}
+          value={category}
           onChange={onInputChange}
-          placeholder="Product category"
           required
         >
-          <option value="Transport" className={css.transactionsCategoryItem}>
-            Transport
-          </option>
+          <option value="Transport">Transport</option>
           <option value="Products">Products</option>
           <option value="Health">Health</option>
           <option value="Alcohol">Alcohol</option>
@@ -101,6 +99,7 @@ export const TransactionsForm = () => {
             name="amount"
             className={css.transactionsAmount}
             onChange={onInputChange}
+            value={amount}
             placeholder="00.00"
             required
           />

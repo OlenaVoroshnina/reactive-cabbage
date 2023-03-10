@@ -145,3 +145,43 @@ export const BalanceWrapper = styled.div`
   justify-content: space-between;
   padding: 40px 140px 8px;
 `;
+
+export const BlockHeading = styled.div`
+  padding-top: 14px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-direction: column-reverse;
+
+  .reportLink {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+    font-size: 12px;
+    color: rgba(82, 85, 95, 0.7);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    :hover,
+    :focus {
+      color: #ff751d;
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 251px;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 40px;
+    max-width: 704pxpx;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1098px;
+    gap: 298px;
+    justify-content: flex-end;
+  }
+`;

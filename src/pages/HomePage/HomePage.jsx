@@ -15,6 +15,7 @@ import {
   TabListStyled,
   TabStyled,
   NavLinkStyled,
+  BlockHeading
 } from './HomePage.styled';
 
 export const HomePage = () => {
@@ -32,6 +33,7 @@ export const HomePage = () => {
     <>
       {isLoggedIn ? (
         <Background>
+
           <BalanceWrapper>
             <Balance />
             <StyledReportsBtn to="/reports" state={{ from: location }}>
@@ -39,6 +41,7 @@ export const HomePage = () => {
               <ReportsIcon className="reportsIcon" />
             </StyledReportsBtn>
           </BalanceWrapper>
+
           <TabsStyled selectedIndex={index} onSelect={() => {}}>
             <TabListStyled>
               <TabStyled>
