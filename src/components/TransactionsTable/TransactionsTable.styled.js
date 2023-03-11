@@ -24,7 +24,11 @@ export const TransactionTable = styled.table`
     border-radius: 0 16px 0 0;
   }
   thead {
+    width: 624px;
     justify-content: center;
+    @media screen and (min-width: 1280px) {
+      width: 746px;
+    }
     tr {
       justify-content: center;
       display: flex;
