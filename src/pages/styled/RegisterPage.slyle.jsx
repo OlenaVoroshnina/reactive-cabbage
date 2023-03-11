@@ -13,7 +13,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin: 0 auto;
   text-align: center;
   @media screen and (min-width: 768px) {
     padding: 117px 171px 155px 171px;
@@ -24,12 +24,14 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  
   @media screen and (min-width: 1280px) {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
