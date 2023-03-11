@@ -25,7 +25,7 @@ export const Transactions = () => {
         {isTablet && <TransactionsTable />}
         {isDesktop && <TransactionsTable />}
 
-        <TransactionsSummary />
+        {!isMobile && <TransactionsSummary />}
       </div>
       <BgCabbage />
     </div>
