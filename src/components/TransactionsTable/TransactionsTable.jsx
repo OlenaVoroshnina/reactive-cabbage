@@ -85,7 +85,7 @@ export const TransactionsTable = () => {
                       {minus} {amount.toFixed(2)}
                     </td>
                     <td>
-                      <span
+                      <span className='icon-basket'
                         id={_id}
                         onClick={() => handleModalOpen(_id)}
                         style={{ cursor: 'pointer' }}
