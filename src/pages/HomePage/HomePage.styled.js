@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Tab, Tabs, TabList } from 'react-tabs';
 import { NavLink, Link } from 'react-router-dom';
 
-// import 'react-tabs/style/react-tabs.css';
+import 'react-tabs/style/react-tabs.css';
 
 export const Background = styled.div`
   top: 0;
@@ -20,9 +20,17 @@ export const Background = styled.div`
 export const TabsStyled = styled(Tabs)`
   margin: 0 auto;
   background-color: transparent;
+  @media (max-width: 767px) {
+    & .react-tabs__tab--selected {
+      background-color:#f7741d;
+      color: #ffffff;
+      border-color: transparent;
+    }
+  }
   @media (min-width: 768px) {
     max-width: 704px;
     border-radius: 30px;
+    border-color: transparent;
     & .react-tabs__tab-panel--selected {
       position: relative;
       top: -24px;
