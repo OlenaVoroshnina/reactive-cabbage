@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HandySvg } from 'handy-svg';
+import { HandySvg } from '../../../images/imgReports/handy-svg';
 
 export const List = styled.ul`
   display: flex;
