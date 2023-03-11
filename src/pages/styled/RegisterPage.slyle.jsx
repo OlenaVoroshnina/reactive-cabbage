@@ -201,7 +201,7 @@ export const NavBtn = styled(NavLink)`
   justify-content: center;
   align-items: center;
 
-  padding: 12px 32px;
+  padding: 12px 10px;
 
   background-color: #f5f6fb;
   border-radius: 16px;
