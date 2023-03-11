@@ -19,7 +19,6 @@ export const Background = styled.div`
 
 export const TabsStyled = styled(Tabs)`
   margin: 0 auto;
-  /* max-width: 320px; */
   background-color: transparent;
   @media (min-width: 768px) {
     max-width: 704px;
@@ -40,22 +39,23 @@ export const TabsStyled = styled(Tabs)`
     margin: 0;
   }
 `;
-export const TabStyled = styled(Tab)`
-  background-color: #fefefe;
-  text-decoration: none;
-  // background: rgba(250, 251, 253, 1);
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  width: 138px;
-  height: 40px;
-  height: 53px;
-  padding: 12px 19px;
-  border-radius: 30px 30px 0 0;
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
+export const TabStyled = styled(Tab)`
+  z-index: 100;
+  background-color: #f7741d;
+  width: 50%;
+  height: 53px;
+  padding: 19px 12px;
+  text-align: center;
+  transition: background-color 250ms ease;
+
+  @media (min-width: 768px) {
+    background-color: #fefefe;
+    padding: 13px 12px;
+    width: 138px;
+    height: 40px;
+    border-radius: 30px 30px 0 0;
+  }
   .active {
     color: #ff751d;
   }
@@ -65,13 +65,17 @@ export const TabListStyled = styled(TabList)`
   display: flex;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   margin: 0;
 
   @media (min-width: 768px) {
     position: relative;
     width: 276px;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    bottom: -134px;
   }
 `;
 
@@ -88,10 +92,6 @@ export const NavLinkStyled = styled(NavLink)`
   @media (min-width: 768px) {
     margin: 0px 25px;
     color: black;
-
-    @media screen and (min-width: 320px) and (max-width: 767px) {
-      margin: -77px;
-    }
   }
 `;
 

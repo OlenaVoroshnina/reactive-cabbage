@@ -297,8 +297,17 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #ffffff;
-    box-shadow: 2px 2px 22px 0px rgba(0, 0, 0, 0.2);
+
+    box-shadow: 1px 3px 5px 0px rgba(255, 107, 8, 0.35);
     cursor: pointer;
+    transition: all 250ms ease;
+  }
+
+  .transactionsInputBtn:hover {
+    background-color: #fe9c0a;
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .transactionsClearBtn {
@@ -314,8 +323,23 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #2e2f30;
-    box-shadow: 2px 2px 22px 0px rgba(0, 0, 0, 0.2);
+
+    box-shadow: 1px 2px 5px 0px rgba(170, 178, 197, 0.4);
     cursor: pointer;
+
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transactionsClearBtn:hover {
+    background-color: #fe9c0a;
+    color: #fff;
+  }
+
+  .transactionsClearBtn:hover {
+    box-shadow: 0px 0px 2px 1px #f5f6fb;
+    transform: scale(1.01);
   }
 
   .transactionsButtonsWrap {
@@ -323,8 +347,7 @@
     justify-content: center;
     margin: 0;
     margin-top: 32px;
-	 margin-bottom: 48px;
-
+    margin-bottom: 48px;
   }
 }
 
@@ -372,6 +395,7 @@
 
   .transactionsInputBtn {
     width: 136px;
+    box-shadow: 1px 3px 5px 0px rgba(255, 107, 8, 0.35);
   }
 
   .transactionsClearBtn {
@@ -383,5 +407,3 @@
     margin-top: 46px;
   }
 }
-
-

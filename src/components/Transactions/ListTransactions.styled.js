@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const StyledList = styled.ul`
   width: 320px;
+
   margin: 20px auto;
+
 
   @media screen and (min-width: 768px) {
     width: 572px;
@@ -18,9 +20,6 @@ export const ItemStyled = styled.li`
   justify-content: space-between;
   padding: 8px 20px;
   border-bottom: 1px solid #f5f6fb;
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    /* justify-content: center; */
-  }
 `;
 
 export const ItemName = styled.p`

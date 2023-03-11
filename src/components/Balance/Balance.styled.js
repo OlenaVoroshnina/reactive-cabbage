@@ -78,7 +78,8 @@ export const StyledBalanceForm = styled.form`
     border-left: none;
     border-radius: 16px;
     outline: none;
-    transition-property: color, background-color;
+    transition-property: color, background-color, border-color, box-shadow,
+      transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -87,6 +88,8 @@ export const StyledBalanceForm = styled.form`
       color: white;
       background-color: #ff751d;
       border-color: #ff751d;
+      box-shadow: 0px 0px 2px 1px #f5f6fb;
+      transform: scale(1.01);
     }
     @media screen and (min-width: 768px) {
       width: 125px;
