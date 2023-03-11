@@ -296,9 +296,15 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #ffffff;
-    box-shadow: 2px 2px 22px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+transition: all 250ms ease;
+	 
   }
+
+  .transactionsInputBtn:hover {
+    box-shadow: 0px 0px 2px 1px #f5f6fb;
+	 transform: scale(1.01);
+	 }
 
   .transactionsClearBtn {
     width: 125px;
@@ -313,9 +319,15 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #2e2f30;
-    box-shadow: 2px 2px 22px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+transition: all 250ms ease;
+
   }
+
+    .transactionsClearBtn:hover {
+    box-shadow: 0px 0px 2px 1px #f5f6fb;
+	 transform: scale(1.01);
+	 }
 
   .transactionsButtonsWrap {
     display: flex;
