@@ -68,7 +68,8 @@ export const InputForm = () => {
                         elementCategory={elementCategory}
                         setElementCategory={setElementCategory}
                     />
-                    <input placeholder='Amount' name="sum" />
+                    <input type='number' placeholder='Amount' name="sum" />
+                    
                 </div>
                 <div>
                     <button type='submit'>Input</button>

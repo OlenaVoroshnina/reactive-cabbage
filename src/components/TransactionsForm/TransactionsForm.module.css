@@ -19,6 +19,7 @@
     height: 258px;
     background-color: #f5f6fb;
     border-bottom-left-radius: 30%;
+    
   }
 
   .dateWrapper {
@@ -100,11 +101,11 @@
     width: 183px;
   }
 
-  /* .calculatorIcon {
+  .calculatorIcon {
     position: absolute;
     right: 30px;
     top: 44px;
-  } */
+  }
 
   .transactionsAmount {
     width: 183px;
@@ -256,11 +257,11 @@
     width: 110px;
   }
 
-  /* .calculatorIcon {
+  .calculatorIcon {
     position: absolute;
-    right: 16px;
-    top: 12px;
-  } */
+    right: 25px;
+    top: 11px;
+  }
 
   .transactionsAmount {
     width: 110px;
@@ -358,11 +359,12 @@
     width: 121px;
   }
 
-  /* .calculatorIcon {
+  .calculatorIcon {
     position: absolute;
-    right: 17px;
+    /* right: 17px; */
     top: 12px;
-  } */
+    left: 75px;
+  }
 
   .transactionsAmount {
     width: 121px;
