@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reactive-cabbage/static/css/main.5e4ec44a.css",
-    "main.js": "/reactive-cabbage/static/js/main.2dfc81a3.js",
+    "main.css": "/reactive-cabbage/static/css/main.476b3dae.css",
+    "main.js": "/reactive-cabbage/static/js/main.54cc5b47.js",
     "static/css/988.11a9f1c1.chunk.css": "/reactive-cabbage/static/css/988.11a9f1c1.chunk.css",
     "static/js/988.32f24d84.chunk.js": "/reactive-cabbage/static/js/988.32f24d84.chunk.js",
     "static/js/637.73d0b5af.chunk.js": "/reactive-cabbage/static/js/637.73d0b5af.chunk.js",
@@ -18,6 +18,7 @@
     "static/media/cabagesTwo.svg": "/reactive-cabbage/static/media/cabagesTwo.9ff43966e2b4ab58a66cbec361d29629.svg",
     "static/media/logo.svg": "/reactive-cabbage/static/media/logo.9a1219fa7b0c5ccef923ebbd77f9ee7b.svg",
     "static/media/calendar.svg": "/reactive-cabbage/static/media/calendar.38646e5b2bec379ee675e9d7335592a6.svg",
+    "static/media/calculator.svg": "/reactive-cabbage/static/media/calculator.548cfa77d066c8000a1216da93e9d1fb.svg",
     "static/media/delete.svg": "/reactive-cabbage/static/media/delete.635b5bb669cfd7feae3f424e39d2874c.svg",
     "static/media/eye-blocked.svg": "/reactive-cabbage/static/media/eye-blocked.347a2ccf992bc6f9c76bf26e56aeaa6c.svg",
     "index.html": "/reactive-cabbage/index.html",
@@ -27,8 +28,8 @@
     "static/media/close.svg": "/reactive-cabbage/static/media/close.725652eddfe0bd34d7c252763578a80c.svg",
     "static/media/orangeBgc.svg": "/reactive-cabbage/static/media/orangeBgc.f69281f95d47540c19ff50c7cc25e3ce.svg",
     "static/media/bgcForSvg.svg": "/reactive-cabbage/static/media/bgcForSvg.9948a09e481b3d692e82a7a76990676d.svg",
-    "main.5e4ec44a.css.map": "/reactive-cabbage/static/css/main.5e4ec44a.css.map",
-    "main.2dfc81a3.js.map": "/reactive-cabbage/static/js/main.2dfc81a3.js.map",
+    "main.476b3dae.css.map": "/reactive-cabbage/static/css/main.476b3dae.css.map",
+    "main.54cc5b47.js.map": "/reactive-cabbage/static/js/main.54cc5b47.js.map",
     "988.11a9f1c1.chunk.css.map": "/reactive-cabbage/static/css/988.11a9f1c1.chunk.css.map",
     "988.32f24d84.chunk.js.map": "/reactive-cabbage/static/js/988.32f24d84.chunk.js.map",
     "637.73d0b5af.chunk.js.map": "/reactive-cabbage/static/js/637.73d0b5af.chunk.js.map",
@@ -40,7 +41,7 @@
     "370.77a35b60.chunk.js.map": "/reactive-cabbage/static/js/370.77a35b60.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e4ec44a.css",
-    "static/js/main.2dfc81a3.js"
+    "static/css/main.476b3dae.css",
+    "static/js/main.54cc5b47.js"
   ]
 }
