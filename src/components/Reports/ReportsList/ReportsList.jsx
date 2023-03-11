@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectReportsData } from "redux/selectors";
-import { Item, ItemSvg, List, ItemIncome} from "./ReportsList.styled";
+import { Item, ItemSvg, List, ItemIncome, BgcSvg} from "./ReportsList.styled";
 import { filteredDataAction } from "redux/reportsQuery/reportsQuerySlice";
 import {translateToEng} from "../../../hooks/useCategory";
 
@@ -63,7 +63,7 @@ export const ReportsList = ({ onChange }) => {
                 >
                   <p>{item[1].total.toFixed(2)}</p>
                   <ItemSvg width="56" height="56">
-                    <svg
+                    <BgcSvg
                       src={iconName === active ? OrangeBgc : BgcIcon}
                       width="59"
                       height="46"
