@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { updateBalance } from 'redux/transactions/operation';
 import { selectBalance } from 'redux/selectors';
 import UniversalModal from '../UniversalModal/UniversalModal';
-// import BalanceModal from 'components/BalanceModal/BalanceModal';
+import BalanceModal from 'components/BalanceModal/BalanceModal';
 import {
   StyledBalanceForm,
   BtnsWrapper,
@@ -19,7 +19,7 @@ const Balance = () => {
 
   // console.log(typeof transactionBalance);
 
-  // const location = useLocation();
+  const location = useLocation();
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const form = useRef();
@@ -78,7 +78,7 @@ const Balance = () => {
       {/* {transactionBalance === 0 && <BalanceModal />} */}
       {/* {!incomeTotal && <BalanceModal />} */}
 
-      {/* { location.pathname === '/expenses' && <BalanceModal />} */}
+      {location.pathname === '/expenses' && <BalanceModal />}
 
       {modalOpen && (
         <UniversalModal

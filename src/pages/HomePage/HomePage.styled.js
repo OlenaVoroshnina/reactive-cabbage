@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Tab, Tabs, TabList } from 'react-tabs';
 import { NavLink, Link } from 'react-router-dom';
 
-import 'react-tabs/style/react-tabs.css';
+// import 'react-tabs/style/react-tabs.css';
 
 export const Background = styled.div`
   top: 0;
@@ -41,12 +41,13 @@ export const TabsStyled = styled(Tabs)`
 `;
 
 export const TabStyled = styled(Tab)`
-  z-index: 100;
-  background-color: #f7741d;
+  /* background-color: #f7741d; */
+  background: rgba(245, 246, 251, 1);
   width: 50%;
   height: 53px;
   padding: 19px 12px;
   text-align: center;
+  border: 1px solid #ffff;
   transition: background-color 250ms ease;
 
   @media (min-width: 768px) {
@@ -56,8 +57,16 @@ export const TabStyled = styled(Tab)`
     height: 40px;
     border-radius: 30px 30px 0 0;
   }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    z-index: 10;
+  }
   .active {
     color: #ff751d;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      /* background: rgba(245, 246, 251, 1); */
+      color: rgba(0, 0, 0, 0.8);
+    }
   }
 `;
 
@@ -75,12 +84,12 @@ export const TabListStyled = styled(TabList)`
   }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    bottom: -134px;
+    bottom: -200px;
   }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  color: #ffffff;
+  color: #f7741d;
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 12px;
