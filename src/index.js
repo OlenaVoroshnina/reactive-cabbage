@@ -22,8 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <BrowserRouter>
+          <BrowserRouter 
             basename="/reactive-cabbage"
+          >
             <App />
           </BrowserRouter>
         </ThemeProvider>
