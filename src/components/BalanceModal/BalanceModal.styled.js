@@ -9,7 +9,7 @@ export const StyledBackdrop = styled.div`
 `;
 
 export const StyledModal = styled.div`
-  z-index: 101;
+  z-index: 110;
   position: fixed;
   top: 250px;
   left: 50%;
