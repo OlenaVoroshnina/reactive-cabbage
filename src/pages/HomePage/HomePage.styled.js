@@ -7,17 +7,19 @@ import 'react-tabs/style/react-tabs.css';
 export const Background = styled.div`
   top: 0;
   left: 0;
-  height: 296px;
+  height: 526px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 10%;
   width: 100%;
-  @media (min-width: 321px) {
-    height: 526px;
-  } ;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    height: 296px;
+  }
 `;
 
 export const TabsStyled = styled(Tabs)`
   margin: 0 auto;
+  /* max-width: 320px; */
   background-color: transparent;
   @media (min-width: 768px) {
     max-width: 704px;

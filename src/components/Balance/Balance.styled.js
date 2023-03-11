@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBalanceForm = styled.form`
-  margin: 0 auto 50px;
+  /* margin: 0 auto 50px; */
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
@@ -11,6 +11,7 @@ export const StyledBalanceForm = styled.form`
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
       margin: 0 auto;
+      margin-bottom: 0;
     }
   }
 
