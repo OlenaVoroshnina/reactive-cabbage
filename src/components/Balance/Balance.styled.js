@@ -27,7 +27,7 @@ export const StyledBalanceForm = styled.form`
     font-weight: 700;
     width: 125px;
     height: 44px;
-    padding: 22px 0px;
+    /* padding: 22px 0px; */
     color: #52555f;
     text-align: center;
     border: 2px solid white;
@@ -51,7 +51,7 @@ export const StyledBalanceForm = styled.form`
     }
     @media screen and (min-width: 768px) {
       width: 125px;
-      padding: 12px 0px;
+      /* padding: 12px 0px; */
       border-radius: 16px;
     }
 
