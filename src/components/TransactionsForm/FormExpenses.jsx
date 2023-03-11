@@ -5,6 +5,7 @@ import SelectDataPicker from 'components/DatePicker/DatePicker';
 import { format } from 'date-fns';
 import { translateToRus } from 'hooks/useCategory';
 import css from './TransactionsForm.module.css';
+import calculator from '../../images/calculator.svg';
 
 export const TransactionsFormExpenses = () => {
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
@@ -100,10 +101,11 @@ export const TransactionsFormExpenses = () => {
             className={css.transactionsAmount}
             onChange={onInputChange}
             value={amount > 0 && amount}
-            placeholder="00.00"
+            placeholder="0.00"
             required
           />
           {/* Добавить свг калькулятор*/}
+          <img src={calculator} alt='calculator' className={css.calculatorIcon}/>
         </div>
       </div>
       <div className={css.transactionsButtonsWrap}>

@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const StyledList = styled.ul`
   width: 320px;
-  margin-top: 100px;
+
+  margin: 20px auto;
+
+
   @media screen and (min-width: 768px) {
     width: 572px;
 
@@ -20,7 +23,7 @@ export const ItemStyled = styled.li`
 `;
 
 export const ItemName = styled.p`
-  font-weight: 400;
+  font-weight: 700;
   font-size: 12px;
   line-height: 1.16;
   width: 188px;

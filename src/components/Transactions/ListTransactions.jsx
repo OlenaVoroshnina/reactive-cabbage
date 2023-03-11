@@ -80,11 +80,12 @@ export const ListTransactions = () => {
             return (
               <ItemStyled key={_id}>
                 <ItemNameCont>
+                <ItemName>{description}</ItemName>
                   <ItemDateCont>
                     <ItemDate>{date}</ItemDate>
-                    <ItemName>{description}</ItemName>
                     <ItemCategory>{translateToEng(category)}</ItemCategory>
                   </ItemDateCont>
+                  
                 </ItemNameCont>
                 <SumCont>
                   <Sum style={{ color }} className="sum">
@@ -100,6 +101,7 @@ export const ListTransactions = () => {
                 </SumCont>
               </ItemStyled>
             );
+
           })}
       {modalOpen && (
         <UniversalModal
