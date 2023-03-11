@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 export const TransactionTable = styled.table`
-  /* margin-top: 48px; */
   position: relative;
   border-collapse: collapse;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  max-width: 746px;
+ 
+
   th {
     width: 100%;
     height: 38px;
     background: #f5f6fb;
+    color: #000;
     border: none;
     font-weight: 700;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     border-collapse: collapse;
   }
@@ -70,6 +72,7 @@ export const TransactionTable = styled.table`
       background-color: #ff751d;
       border-radius: 8px;
     }
+	
     tr {
       justify-content: center;
       display: flex;
@@ -86,6 +89,20 @@ export const TransactionTable = styled.table`
         display: flex;
         height: 40px;
         overflow: hidden;
+        font-size: 12px;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.25s ease-in-out;
+          :hover {
+            width: 32px;
+            height: 32px;
+            background-color: #f5f6fb;
+            border-radius: 50%;
+          }
+        }
       }
     }
   }
@@ -93,3 +110,4 @@ export const TransactionTable = styled.table`
     display: none;
   }
 `;
+
