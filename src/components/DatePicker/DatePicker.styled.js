@@ -29,5 +29,9 @@ export const StyledDatePicker = styled.div`
     :focus .calendarIcon {
       fill: #ff751d;
     }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      margin-top: 0;
+    }
   }
 `;
