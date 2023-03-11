@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledList = styled.ul`
   width: 320px;
 
-  margin: 20px auto;
+  margin: 120px auto;
 
 
   @media screen and (min-width: 768px) {
