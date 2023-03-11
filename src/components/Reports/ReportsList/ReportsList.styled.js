@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HandySvg } from '../../../images/imgReports/handy-svg';
+// import { HandySvg } from '../../../images/imgReports/handy-svg';
 
 export const List = styled.ul`
   display: flex;
@@ -82,9 +82,9 @@ export const ItemSvg = styled.svg`
   position: relative;
 `;
 
-export const BgcSvg = styled(HandySvg)`
-  position: absolute;
-  top: 100px;
-  width: 59px;
-  height: 46px;
-`;
+// export const BgcSvg = styled(HandySvg)`
+//   position: absolute;
+//   top: 100px;
+//   width: 59px;
+//   height: 46px;
+// `;
