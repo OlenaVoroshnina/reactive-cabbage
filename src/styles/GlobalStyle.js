@@ -41,7 +41,7 @@ input {
 
 input:hover,
 input:focus {
-    outline-color: #fe9c0a;
+    outline: none;
 }
 
 /* input[type="text" i] {
