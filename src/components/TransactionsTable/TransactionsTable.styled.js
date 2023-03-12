@@ -82,16 +82,18 @@ export const TransactionTable = styled.table`
       td {
         position: relative;
         align-items: center;
-        justify-content: left;
-        padding-left: 24px;
+        justify-content: center;
+        /* padding-left: 24px; */
         flex: 1 0 calc(100% / 5);
         overflow-x: hidden;
         display: flex;
         height: 40px;
         overflow: hidden;
         font-size: 12px;
+        text-align: center;
+
         @media (min-width: 1280px) {
-          padding-left: 36px;
+          /* padding-left: 36px; */
         }
 
         span {
