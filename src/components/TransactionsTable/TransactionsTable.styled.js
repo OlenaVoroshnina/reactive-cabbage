@@ -5,7 +5,6 @@ export const TransactionTable = styled.table`
   display: flex;
   align-items: center;
   flex-direction: column;
- 
 
   th {
     width: 100%;
@@ -72,24 +71,28 @@ export const TransactionTable = styled.table`
       background-color: #ff751d;
       border-radius: 8px;
     }
-	
+
     tr {
       justify-content: center;
       display: flex;
+      /* gap: 8px; */
       &:not(:last-child) {
         border-bottom: 2px solid #f5f6fb;
       }
       td {
         position: relative;
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        justify-content: left;
+        padding-left: 24px;
         flex: 1 0 calc(100% / 5);
         overflow-x: hidden;
         display: flex;
         height: 40px;
         overflow: hidden;
         font-size: 12px;
+        @media (min-width: 1280px) {
+          padding-left: 36px;
+        }
 
         span {
           display: flex;
@@ -110,4 +113,3 @@ export const TransactionTable = styled.table`
     display: none;
   }
 `;
-
