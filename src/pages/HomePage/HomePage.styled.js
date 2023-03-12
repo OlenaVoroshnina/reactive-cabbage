@@ -22,7 +22,7 @@ export const TabsStyled = styled(Tabs)`
   background-color: transparent;
   @media (max-width: 767px) {
     & .react-tabs__tab--selected {
-      background-color:#f7741d;
+      background-color: #f7741d;
       color: #ffffff;
       border-color: transparent;
     }
@@ -33,7 +33,7 @@ export const TabsStyled = styled(Tabs)`
     }
   }
   @media (min-width: 768px) {
-    /* max-width: 704px; */
+    max-width: 704px;
     border-radius: 30px;
     & .react-tabs__tab-panel--selected {
       position: relative;
@@ -54,7 +54,7 @@ export const TabsStyled = styled(Tabs)`
 
 export const TabStyled = styled(Tab)`
   /* background-color: #f7741d; */
-  background: #F5F6FB;
+  background: #f5f6fb;
   width: 50%;
   height: 53px;
   padding: 19px 12px;
@@ -77,7 +77,7 @@ export const TabStyled = styled(Tab)`
     color: #ff751d;
     @media screen and (min-width: 320px) and (max-width: 767px) {
       /* background: rgba(245, 246, 251, 1); */
-      color: rgba(0, 0, 0, 0.8);
+      color: #ffff;
     }
   }
 `;
@@ -96,12 +96,12 @@ export const TabListStyled = styled(TabList)`
   }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    bottom: -200px;
+    bottom: -16px;
   }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  color: #f7741d;
+  color: #010101;
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 12px;
