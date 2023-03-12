@@ -31,6 +31,10 @@ p {
    margin: 0;
 }
 
+input[type="number" i] {
+    padding: 0px;
+}
+
 ul,
 ol {
    margin: 0;
