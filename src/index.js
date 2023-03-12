@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <BrowserRouter
-          // basename="/reactive-cabbage"
+          basename="/reactive-cabbage"
           >
             <App />
           </BrowserRouter>
