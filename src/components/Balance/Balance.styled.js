@@ -26,7 +26,7 @@ export const StyledBalanceForm = styled.form`
   .inputTag {
     font-weight: 700;
     width: 125px;
-    height: 44px;
+    /* height: 44px; */
     /* padding: 22px 0px; */
     color: #52555f;
     text-align: center;
