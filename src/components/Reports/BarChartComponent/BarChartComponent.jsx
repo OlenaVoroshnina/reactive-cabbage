@@ -103,55 +103,55 @@ export const BarChartComponent = ({ budget }) => {
   };
 
   return (
-    	<BarMain ref={ref}>
-	      <BarChart
-	        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-	        layout={option.layout}
-	        width={size.clientWidth}
-	        height={size.clientHeight}
-	        data={data}
-	        barCategoryGap={5}
-	        fontSize={12}
-	      >
-	        <XAxis
-	          hide={xParams.hide}
-	          type={xParams.type}
-	          dataKey={xParams.dataKey}
-	          stroke="##52555F"
-	          width={20}
-	          fontSize={12}
-	        />
-	        <YAxis
-	          hide={yParams.hide}
-	          type={yParams.type}
-	          dataKey={yParams.dataKey}
-	          stroke="#52555F"
-	          tickCount={10}
-	          width={50}
-	          fontSize={12}
-	        />
-	        <CartesianGrid
-	          stroke="#ccc"
-	          horizontal={option.strokeHorizontal}
-	          vertical={false}
-	          strokeDasharray="0 0"
-	        />
-	        <Bar
-	          dataKey="pv"
-	          fill="#FF751D"
-	          barSize={40}
-	          shape={<Rectangle radius={option.shapeRadius} />}
-	        >
-	          <LabelList content={renderCustomBarLabel} position="top" />
-	          <LabelList content={renderCustomBarLabel} position="top" />
-	          {data.map((entry, index) => (
-	            <Cell
-	              key={`cell-${index}`}
-	              fill={index % 3 ? '#FFB182' : '#FF751D'}
-	            />
-	          ))}
-	        </Bar>
-	      </BarChart>
-	    </BarMain>
+    <BarMain ref={ref}>
+      <BarChart
+        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+        layout={option.layout}
+        width={size.clientWidth}
+        height={size.clientHeight}
+        data={data}
+        barCategoryGap={5}
+        fontSize={12}
+      >
+        <XAxis
+          hide={xParams.hide}
+          type={xParams.type}
+          dataKey={xParams.dataKey}
+          stroke="##52555F"
+          width={20}
+          fontSize={12}
+        />
+        <YAxis
+          hide={yParams.hide}
+          type={yParams.type}
+          dataKey={yParams.dataKey}
+          stroke="#52555F"
+          tickCount={10}
+          width={50}
+          fontSize={12}
+        />
+        <CartesianGrid
+          stroke="#ccc"
+          horizontal={option.strokeHorizontal}
+          vertical={false}
+          strokeDasharray="0 0"
+        />
+        <Bar
+          dataKey="pv"
+          fill="#FF751D"
+          barSize={40}
+          shape={<Rectangle radius={option.shapeRadius} />}
+        >
+          <LabelList content={renderCustomBarLabel} position="top" />
+          <LabelList content={renderCustomBarLabel} position="top" />
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={index % 3 ? '#FFB182' : '#FF751D'}
+            />
+          ))}
+        </Bar>
+      </BarChart>
+    </BarMain>
   );
 };
