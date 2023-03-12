@@ -31,9 +31,22 @@ p {
    margin: 0;
 }
 
-input[type="number" i] {
+/* input[type="number" i] {
+    padding: 0px;
+    
+} */
+input {
     padding: 0px;
 }
+
+input:hover,
+input:focus {
+    outline-color: #fe9c0a;
+}
+
+/* input[type="text" i] {
+    padding: 0px;
+} */
 
 ul,
 ol {
