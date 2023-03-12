@@ -1,3 +1,4 @@
+import { translateToEng } from 'hooks/useCategory';
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -67,7 +68,7 @@ export const BarChartComponent = ({ budget }) => {
       const data = [];
       for (const item in reports[budget][`${budget}Data`]) {
         data.push({
-          name: item,
+          name: translateToEng(item),
           pv: reports[budget][`${budget}Data`][item].total,
         });
       }
