@@ -29,7 +29,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  
+
   @media screen and (min-width: 1280px) {
     width: 100%;
     flex-direction: row;
@@ -294,4 +294,47 @@ export const BottomCabbages = styled.img`
   width: 183px;
   margin-bottom: 50px;
   align-self: flex-start;
+`;
+
+export const GoogleLoginLink = styled.a`
+  box-sizing: border-box;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 116px;
+  min-height: 44px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  transition: 350ms ease-in-out;
+  color: #000000;
+  background-color: #f5f6fb;
+  padding: 10px 16px;
+  border-radius: 26px;
+  border: none;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: #ff751d;
+    filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+  }
+  &:active {
+    background-color: #ff751d;
+    color: white;
+    filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+  }
+  & > svg {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+  }
+  @media screen and (min-width: 768px) {
+    min-width: 122px;
+  }
 `;

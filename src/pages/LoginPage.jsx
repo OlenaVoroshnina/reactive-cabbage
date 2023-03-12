@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { logIn } from 'redux/auth/operation';
+import { FcGoogle } from 'react-icons/fc';
 
 import {
   Container,
@@ -19,6 +20,7 @@ import {
   BottomCabbages,
   InputWrapper,
   PasswordBtn,
+  GoogleLoginLink,
   PasswordIcon,
 } from 'pages/styled/RegisterPage.slyle';
 
@@ -70,14 +72,10 @@ const LoginPage = () => {
         </TitleWrap>
         <FormContainer>
           <SubTitle>You can log in with your Google Account:</SubTitle>
-          <div>GOOGLE</div>
-          {/* <div>
-            <p>You can log in with your Google Account:</p>
-            <button href="https://kapusta-backend.goit.global/auth/google">
-              {/* <GoogleIcon /> */}
-          {/* Google
-            </button>
-          </div> */}
+          <GoogleLoginLink href="https://kapusta-backend.goit.global/auth/google">
+            <FcGoogle />
+            Google
+          </GoogleLoginLink>
           <SubTitle>
             Or log in using an email and password, after registering:
           </SubTitle>
