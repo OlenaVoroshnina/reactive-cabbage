@@ -262,7 +262,7 @@
 
   .calculatorIcon {
     position: absolute;
-    right: 10px;
+    right: 5px;
     top: 11px;
   }
 
@@ -270,7 +270,7 @@
     width: 110px;
     height: 44px;
     /* padding-right: 45px; */
-    padding-left: 10px;
+    /* padding-left: 10px; */
     /* border: 2px solid #f5f6fb; */
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
