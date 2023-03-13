@@ -228,13 +228,15 @@
   .transactionsDescription {
     width: 184px;
     height: 44px;
-    border: 2px solid #f5f6fb;
+    /* border: 2px solid #f5f6fb; */
     border-top-left-radius: 16px;
     font-size: 12px;
     line-height: 14px;
     padding-left: 19px;
     background-color: transparent;
     color: #52555f;
+    border: none;
+    outline: 2px solid #f5f6fb;
   }
 
   .transactionsDescription::placeholder {
@@ -248,7 +250,9 @@
     padding-left: 16px;
     font-size: 12px;
     color: #c7ccdc;
-    border: 2px solid #f5f6fb;
+    /* border: 2px solid #f5f6fb; */
+    border: none;
+    outline: 2px solid #f5f6fb;
   }
 
   .transactionsAmountWrapper {
@@ -267,7 +271,7 @@
     height: 44px;
     /* padding-right: 45px; */
     padding-left: 10px;
-    border: 2px solid #f5f6fb;
+    /* border: 2px solid #f5f6fb; */
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     font-weight: 400;
@@ -276,6 +280,8 @@
     text-align: center;
     background-color: #ffffff;
     color: #c7ccdc;
+    border: none;
+    outline: 2px solid #f5f6fb;
   }
 
   .transactionsAmount::placeholder {

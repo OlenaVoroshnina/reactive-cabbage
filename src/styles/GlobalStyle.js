@@ -36,13 +36,13 @@ p {
     
 } */
 input {
-    padding: 0px;
+  padding: 0px;
 }
 
-input:hover,
+/* input:hover,
 input:focus {
     outline: none;
-}
+} */
 
 /* input[type="text" i] {
     padding: 0px;
