@@ -1,0 +1,414 @@
+@media screen and (max-width: 767px) {
+  .transactionsForm {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .transactionsInputsWrap {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 258px;
+    background-color: #f5f6fb;
+    border-bottom-left-radius: 30%;
+    
+  }
+
+  .dateWrapper {
+    position: relative;
+  }
+
+  /* .calendarIcon {
+    position: absolute;
+    z-index: 2;
+    left: -2px;
+    top: 12px;
+  }
+  .datePicker {
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--general-text-color);
+    background-color: transparent;
+    border: none;
+    width: 110px;
+    height: 44px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+  }
+  .datePicker:focus {
+    outline-color: transparent;
+  }
+  .datePicker::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    z-index: 9;
+    width: 110px;
+    height: 44px;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  } */
+
+  .transactionsDescription {
+    width: 280px;
+    height: 44px;
+    border-top-left-radius: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: start;
+    background-color: #f5f6fb;
+    padding-left: 30px;
+    border: 2px solid #ffffff;
+    border-bottom: none;
+    color: #52555f;
+  }
+
+  .transactionsDescription::placeholder {
+    font-weight: 400;
+    color: #c7ccdc;
+  }
+
+  .transactionsCategory {
+    width: 280px;
+    height: 44px;
+    font-size: 12px;
+    padding-left: 25px;
+    border: 2px solid #ffffff;
+    border-bottom-right-radius: 16px;
+    background-color: #f5f6fb;
+    color: #c7ccdc;
+  }
+
+  .transactionsCategoryItem {
+    margin: 0;
+    padding: 0;
+  }
+
+  .transactionsAmountWrapper {
+    position: relative;
+    width: 183px;
+  }
+
+  .calculatorIcon {
+    position: absolute;
+    right: 30px;
+    top: 44px;
+  }
+
+  .transactionsAmount {
+    width: 183px;
+    height: 44px;
+    border: 2px solid #fff;
+    padding-right: 55px;
+    padding-left: 55px;
+    border-radius: 22px;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    margin-top: 32px;
+    background-color: #f5f6fb;
+    color: #52555f;
+  }
+
+  .transactionsAmount::placeholder {
+    color: #c7ccdc;
+  }
+
+  .transactionsButtonsWrap {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 32px;
+  }
+
+  .transactionsInputBtn {
+    width: 130px;
+    height: 44px;
+    background: #ff751d;
+    border: none;
+    border-radius: 16px;
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #ffffff;
+    box-shadow: 1px 3px 5px 0px rgba(255, 107, 8, 0.35);
+    cursor: pointer;
+    /* margin-top: 35px; */
+  }
+
+  .transactionsClearBtn {
+    width: 130px;
+    height: 44px;
+    background-color: transparent;
+    border: 2px solid #f6f7fc;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #2e2f30;
+    box-shadow: 1px 2px 5px 0px rgba(170, 178, 197, 0.4);
+
+    cursor: pointer;
+    /* margin-top: 35px; */
+  }
+}
+@media screen and (min-width: 768px) {
+  .transactionsForm {
+    width: 100%;
+    margin: 0 auto;
+    width: 624px;
+  }
+
+  .transactionsInputsWrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .dateWrapper {
+    position: relative;
+  }
+
+  /* .calendarIcon {
+    position: absolute;
+    z-index: 2;
+    left: -5px;
+    top: 2px;
+    cursor: pointer;
+  }
+  .datePicker {
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--table-description-text-color);
+    background-color: transparent;
+    border: none;
+    width: 90px;
+    height: 100%;
+    margin-right: 44px;
+    text-align: end;
+    position: relative;
+    z-index: 9;
+  } */
+
+  /* .datePicker::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    z-index: 9;
+    width: 90px;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
+  .datePicker:focus {
+    outline-color: transparent;
+  } */
+
+  .transactionsDescription {
+    width: 184px;
+    height: 44px;
+    /* border: 2px solid #f5f6fb; */
+    border-top-left-radius: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    padding-left: 19px;
+    background-color: transparent;
+    color: #52555f;
+    border: none;
+    outline: 2px solid #f5f6fb;
+  }
+
+  .transactionsDescription::placeholder {
+    color: #c7ccdc;
+  }
+
+  .transactionsCategory {
+    width: 184px;
+    height: 44px;
+    margin-bottom: 0;
+    padding-left: 16px;
+    font-size: 12px;
+    color: #c7ccdc;
+    /* border: 2px solid #f5f6fb; */
+    border: none;
+    outline: 2px solid #f5f6fb;
+  }
+
+  .transactionsAmountWrapper {
+    position: relative;
+    width: 110px;
+  }
+
+  .calculatorIcon {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+  }
+
+  .transactionsAmount {
+    width: 110px;
+    height: 44px;
+    /* padding-right: 45px; */
+    /* padding-left: 10px; */
+    /* border: 2px solid #f5f6fb; */
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #c7ccdc;
+    border: none;
+    outline: 2px solid #f5f6fb;
+  }
+
+  .transactionsAmount::placeholder {
+    color: #c7ccdc;
+  }
+
+  .transactionsInputBtn {
+    width: 125px;
+    height: 44px;
+    background: #ff751d;
+    border: none;
+    border-radius: 16px;
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    box-shadow: 1px 3px 5px 0px rgba(255, 107, 8, 0.35);
+    cursor: pointer;
+    transition: all 250ms ease;
+  }
+
+  .transactionsInputBtn:hover {
+    background-color: #fe9c0a;
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transactionsClearBtn {
+    width: 125px;
+    height: 44px;
+    background-color: transparent;
+    border: 2px solid #f6f7fc;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #2e2f30;
+
+    box-shadow: 1px 2px 5px 0px rgba(170, 178, 197, 0.4);
+    cursor: pointer;
+
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transactionsClearBtn:hover {
+    background-color: #fe9c0a;
+    color: #fff;
+  }
+
+  .transactionsClearBtn:hover {
+    box-shadow: 0px 0px 2px 1px #f5f6fb;
+    transform: scale(1.01);
+  }
+
+  .transactionsButtonsWrap {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .transactionsForm {
+    width: 1120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+
+  .transactionsInputsWrap {
+    display: flex;
+    align-items: center;
+  }
+
+  /* .datePicker {
+    width: 104px;
+    text-align: center;
+  } */
+
+  .transactionsDescription {
+    width: 238px;
+  }
+  .transactionsCategory {
+    width: 169px;
+  }
+
+  .transactionsAmountWrapper {
+    position: relative;
+    width: 121px;
+  }
+
+  .calculatorIcon {
+    position: absolute;
+    /* right: 17px; */
+    top: 12px;
+    left: 85px;
+  }
+
+  .transactionsAmount {
+    width: 121px;
+  }
+
+  .transactionsInputBtn {
+    width: 136px;
+    box-shadow: 1px 3px 5px 0px rgba(255, 107, 8, 0.35);
+  }
+
+  .transactionsClearBtn {
+    width: 136px;
+  }
+
+  .transactionsButtonsWrap {
+    margin-left: 32px;
+    margin-top: 46px;
+  }
+}
