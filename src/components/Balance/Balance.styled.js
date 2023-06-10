@@ -57,8 +57,8 @@ export const StyledBalanceForm = styled.form`
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
       width: 140px;
-      height: 44px;
-      padding: 20px 0px;
+      height: 40px;
+      /* padding: 20px 0px; */
       border-radius: 22px 0 0 22px;
     }
   }
