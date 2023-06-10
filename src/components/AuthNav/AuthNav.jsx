@@ -52,25 +52,7 @@ export const AuthNav = () => {
               width="90"
               height="31"
               src="https://www.svgmator.com/embed/VlUnnviqm3x0jMU?onload=true&onclick=true&onhover=true "
-            ></iframe>
-
-            {/* <iframe
-              title="logo-animated"
-              id="SVGmator__vcg4oa1678557706203"
-              width="90"
-              height="31"
-              frameBorder="0"
-              src="https://www.svgmator.com/embed/lUfymS2pNOxqWVI?onload=true&onclick=true&onhover=true&loop=true"
-            ></iframe> */}
-
-            {/* <iframe
-              title="logo-animated"
-              width="90"
-              height="31"
-              id="SVGmator__dzdc51678554457508"
-              frameBorder="0"
-              src="https://www.svgmator.com/embed/WuD4CUdZb9ggJfO?onload=true&onclick=true&onhover=true"
-            ></iframe> */}
+            />
           </Link>
           <AuthNavExitWrapper>
             <UserAvatar>{userEmail[0].toUpperCase()}</UserAvatar>
